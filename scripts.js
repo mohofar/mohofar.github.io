@@ -6,7 +6,7 @@ function openTab(evt, tabName) {
         tabcontent[i].style.display = "none";
     }
     // Remove active class from all main tabs
-    tablinks = document.getElementsByClassName("tab");
+    tablinks = document.getElementsByClassName("tabs")[0].getElementsByClassName("tab");
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active-tab", "");
     }
@@ -25,4 +25,15 @@ function openProjectTab(evt, projectName) {
     // Remove active class from all project tabs
     projectlinks = document.getElementsByClassName("project-tabs")[0].getElementsByClassName("tab");
     for (i = 0; i < projectlinks.length; i++) {
-        projectlinks[i].className = projectlinks[i].className.replace(" active-tab",
+        projectlinks[i].className = projectlinks[i].className.replace(" active-tab", "");
+    }
+    // Show the clicked project tab content
+    document.getElementById(projectName).style.display = "block";
+    evt.currentTarget.className += " active-tab";
+}
+
+// Initialize with the first tab active
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector(".tabs .tab").click();
+    document.querySelector(".project-tabs .tab").click();
+});
