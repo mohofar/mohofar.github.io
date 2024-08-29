@@ -1,5 +1,5 @@
 function openTab(evt, tabName) {
-    console.log("Opening tab:", tabName); // Debugging line
+    console.log("Tab Clicked: ", tabName); // Debugging line
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tab-content");
     for (i = 0; i < tabcontent.length; i++) {
