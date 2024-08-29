@@ -8,24 +8,14 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+.project h2 {
+    margin-top: 0;
+}
+
 .project-image {
     max-width: 100%;
     height: auto;
     border-radius: 5px;
     margin-top: 10px;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
-}
-
-/* Style for nested tabs in projects section */
-.project-tabs {
-    margin-top: 20px;
-}
-
-.project-tabs .tab {
-    background-color: #007BFF;
-    color: #fff;
-}
-
-.project-tabs .tab:hover, .project-tabs .active-tab {
-    background-color: #000b16;
 }
