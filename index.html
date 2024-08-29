@@ -23,7 +23,7 @@
 
         <div class="tabs">
             <div class="tab active-tab" onclick="openTab(event, 'latest-news')">Latest News</div>
-            <a href="projects.html" class="tab">Projects</a> <!-- Updated to link to new page -->
+            <div class="tab" onclick="openTab(event, 'projects')">Projects</div>
             <div class="tab" onclick="openTab(event, 'contact')">Contact</div>
         </div>
 
@@ -35,11 +35,32 @@
                 <li><strong>August 2023:</strong> Completed a major project on AI and machine learning, significantly improving process efficiency.</li>
                 <li><strong>May 2022:</strong> Graduated with a Master’s degree in Computer Science from ABC University.</li>
                 <li><strong>March 2021:</strong> Published a research paper on deep learning techniques in a renowned journal.</li>
-                <!-- Add more latest news here -->
                 <li><strong>July 2023:</strong> Awarded Best New Algorithm for AI at The Global Annual Achievement Awards.</li>
                 <li><strong>June 2023:</strong> Invited speaker at the International Conference on AI in Medicine.</li>
                 <li><strong>April 2023:</strong> Research paper accepted at IEEE Conference on Computer Vision.</li>
             </ul>
+        </div>
+
+        <div id="projects" class="tab-content">
+            <h2>Projects</h2>
+            <p>Select a project to view detailed information:</p>
+            <div class="tabs">
+                <div class="tab" onclick="openTab(event, 'project1')">Project Name 1</div>
+                <div class="tab" onclick="openTab(event, 'project2')">Project Name 2</div>
+                <!-- Add more projects as needed -->
+            </div>
+
+            <div id="project1" class="tab-content">
+                <h2>Project Name 1</h2>
+                <img src="path/to/project1-image.jpg" alt="Project Image 1" class="project-image">
+                <p>Detailed description of Project Name 1. Include objectives, technologies used, and the impact of the project.</p>
+            </div>
+
+            <div id="project2" class="tab-content">
+                <h2>Project Name 2</h2>
+                <img src="path/to/project2-image.jpg" alt="Project Image 2" class="project-image">
+                <p>Detailed description of Project Name 2. Include objectives, technologies used, and the impact of the project.</p>
+            </div>
         </div>
 
         <div id="contact" class="tab-content">
