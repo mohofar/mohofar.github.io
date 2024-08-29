@@ -3,48 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Your Name - Personal Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .header {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .summary {
+            background-color: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .summary h2 {
+            margin-top: 0;
+        }
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            background-color: #007BFF;
+            border-radius: 5px;
+        }
+        .tab {
+            width: 33.33%;
+            text-align: center;
+            padding: 10px 0;
+            cursor: pointer;
+            color: #fff;
+        }
+        .tab:hover, .active-tab {
+            background-color: #0056b3;
+        }
+        .tab-content {
+            display: none;
+            background-color: #fff;
+            padding: 20px;
+            margin-top: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .active-content {
+            display: block;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-    <!-- Header Section -->
     <header class="header">
-        <h1>Your Name</h1>
-        <p>A brief summary about you, your profession, and interests.</p>
+        <div class="container">
+            <h1>Your Name</h1>
+            <p>A brief summary about yourself. Your professional title, interests, and what makes you unique.</p>
+        </div>
     </header>
 
-    <!-- Navigation Tabs -->
-    <nav class="navbar">
-        <ul class="nav-tabs">
-            <li class="tab active" onclick="openTab('news')">Latest News</li>
-            <li class="tab" onclick="openTab('contact')">Contact</li>
-        </ul>
-    </nav>
+    <div class="container">
+        <div class="summary">
+            <h2>About Me</h2>
+            <p>Your personal introduction goes here. This should be a concise, engaging summary that gives visitors an idea of who you are, your background, and your career goals.</p>
+        </div>
 
-    <!-- Latest News Section -->
-    <div id="news" class="tab-content">
-        <h2>Latest News</h2>
-        <ul class="news-list">
-            <li>Event 1: Description of the event that happened in your life.</li>
-            <li>Event 2: Description of another significant event.</li>
-            <li>Event 3: More events can be added here as needed.</li>
-        </ul>
+        <div class="tabs">
+            <div class="tab active-tab" onclick="openTab(event, 'latest-news')">Latest News</div>
+            <div class="tab" onclick="openTab(event, 'projects')">Projects</div>
+            <div class="tab" onclick="openTab(event, 'contact')">Contact</div>
+        </div>
+
+        <div id="latest-news" class="tab-content active-content">
+            <h2>Latest News</h2>
+            <p>Here you can include your most recent career updates, events, or news. For example:</p>
+            <ul>
+                <li><strong>January 2024:</strong> Promoted to Senior Developer at XYZ Corp.</li>
+                <li><strong>August 2023:</strong> Completed a major project on AI and machine learning, significantly improving process efficiency.</li>
+                <li><strong>May 2022:</strong> Graduated with a Master’s degree in Computer Science from ABC University.</li>
+                <li><strong>March 2021:</strong> Published a research paper on deep learning techniques in a renowned journal.</li>
+            </ul>
+        </div>
+
+        <div id="projects" class="tab-content">
+            <h2>Projects</h2>
+            <p>Details about your professional or personal projects can go here. For example:</p>
+            <ul>
+                <li><strong>Project Name 1:</strong> A brief description of what this project was about, your role, and the impact it had.</li>
+                <li><strong>Project Name 2:</strong> Description of another project, highlighting key achievements and skills demonstrated.</li>
+            </ul>
+        </div>
+
+        <div id="contact" class="tab-content">
+            <h2>Contact Me</h2>
+            <p>You can reach out to me via the following channels:</p>
+            <ul>
+                <li><i class="fas fa-envelope"></i> Email: your.email@example.com</li>
+                <li><i class="fas fa-phone"></i> Phone: +123 456 7890</li>
+                <li><i class="fas fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></li>
+            </ul>
+        </div>
     </div>
 
-    <!-- Contact Section -->
-    <div id="contact" class="tab-content" style="display:none;">
-        <h2>Contact Me</h2>
-        <form>
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name"><br><br>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email"><br><br>
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message"></textarea><br><br>
-            <input type="submit" value="Submit">
-        </form>
-    </div>
+    <footer>
+        <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+    </footer>
 
-    <script src="script.js"></script>
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active-tab", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active-tab";
+        }
+    </script>
 </body>
 </html>
