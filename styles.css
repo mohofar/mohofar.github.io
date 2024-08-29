@@ -79,27 +79,29 @@ footer {
     width: 100%;
 }
 
+/* Ensure the project tabs are displayed in a vertical stack */
 .project-tabs {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     margin-top: 20px;
     background-color: #007BFF;
     border-radius: 5px;
 }
 
 .project-tabs .tab {
-    flex: 1;
-    text-align: center;
-    padding: 10px 0;
+    text-align: left;
+    padding: 10px;
     cursor: pointer;
     color: #fff;
     transition: background-color 0.3s;
+    width: 100%; /* Full width of the container */
 }
 
 .project-tabs .tab:hover, .project-tabs .active-tab {
     background-color: #000b16;
 }
 
+/* Adjust project content to align with vertical tabs */
 .project-content {
     display: none;
     background-color: #fff;
