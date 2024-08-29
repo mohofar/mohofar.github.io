@@ -3,60 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Morteza Homayounfar | CV</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Your Name - Personal Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
 </head>
 <body>
-    <header>
-        <h1>Morteza Homayounfar</h1>
-        <p>PhD Student (Joint program) at TU Delft and Erasmus MC</p>
+    <header class="header">
+        <div class="container">
+            <h1>Your Name</h1>
+            <p>A brief summary about yourself. Your professional title, interests, and what makes you unique.</p>
+        </div>
     </header>
-    
-    <nav>
-        <ul>
-            <li><a href="#about-me">About Me</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#latest">Latest Publications</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
 
-    <section id="about-me">
-        <h2>About Me</h2>
-        <p>PhD Student (Joint program) at TU Delft and Erasmus MC, specializing in developing 5D growth models to study hip joint growth trajectory using generative and fundamental models. I have a strong background in biomedical imaging and machine learning, with experience in both research and industry settings.</p>
-    </section>
-    
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Machine Learning Engineer at Snowhill Science</h3>
-            <p><strong>May 2022 – July 2023, Remote</strong></p>
-            <p>Led two projects focusing on validating novel models in aging disease models related to longevity. Designed experiments, tested models, and prepared manuscripts for publication.</p>
+    <div class="container">
+        <div class="summary">
+            <h2>About Me</h2>
+            <p>Your personal introduction goes here. This should be a concise, engaging summary that gives visitors an idea of who you are, your background, and your career goals.</p>
         </div>
-        <div class="project">
-            <h3>Research Assistant at Medical-AI Group, The Hong Kong University</h3>
-            <p><strong>May 2022 – July 2023, Hong Kong, China</strong></p>
-            <p>Developed a novel filter pruning method for medical images and an on-device application. Created a model for deriving MRI fat features using DEXA devices with an R2 score exceeding 94%. Contributed to two research publications, one currently under review.</p>
-        </div>
-    </section>
-    
-    <section id="latest">
-        <h2>Latest Publications</h2>
-        <ul>
-            <li>Shabani, S., <strong>Homayounfar, M.</strong>, Vardhanabhuti, V., Kohi-moghadam, M. (2022). Self-supervised region-aware segmentation of COVID-19 pneumonia on CT scans.</li>
-        </ul>
-    </section>
-    
-    <section id="contact">
-        <h2>Contact</h2>
-        <ul>
-            <li>Email: <a href="mailto:m.homayounfar@tudelft.nl">m.homayounfar@tudelft.nl</a></li>
-            <li>Location: Delft, The Netherlands</li>
-            <li>Google Scholar: <a href="https://scholar.google.com/citations?user=JLIBa2AAAAAJ&hl=en" target="_blank">Link</a></li>
-            <li>GitHub: <a href="https://github.com/mohofar" target="_blank">Link</a></li>
-        </ul>
-    </section>
 
-    <script src="script.js"></script>
+        <div class="tabs">
+            <div class="tab active-tab" onclick="openTab(event, 'latest-news')">Latest News</div>
+            <div class="tab" onclick="openTab(event, 'projects')">Projects</div>
+            <div class="tab" onclick="openTab(event, 'contact')">Contact</div>
+        </div>
+
+        <div id="latest-news" class="tab-content active-content">
+            <h2>Latest News</h2>
+            <p>Here you can include your most recent career updates, events, or news. For example:</p>
+            <ul>
+                <li><strong>January 2024:</strong> Promoted to Senior Developer at XYZ Corp.</li>
+                <li><strong>August 2023:</strong> Completed a major project on AI and machine learning, significantly improving process efficiency.</li>
+                <li><strong>May 2022:</strong> Graduated with a Master’s degree in Computer Science from ABC University.</li>
+                <li><strong>March 2021:</strong> Published a research paper on deep learning techniques in a renowned journal.</li>
+            </ul>
+        </div>
+
+        <div id="projects" class="tab-content">
+            <h2>Projects</h2>
+            <p>Details about your professional or personal projects can go here. For example:</p>
+            <ul>
+                <li><strong>Project Name 1:</strong> A brief description of what this project was about, your role, and the impact it had.</li>
+                <li><strong>Project Name 2:</strong> Description of another project, highlighting key achievements and skills demonstrated.</li>
+            </ul>
+        </div>
+
+        <div id="contact" class="tab-content">
+            <h2>Contact Me</h2>
+            <p>You can reach out to me via the following channels:</p>
+            <ul>
+                <li><i class="fas fa-envelope"></i> Email: your.email@example.com</li>
+                <li><i class="fas fa-phone"></i> Phone: +123 456 7890</li>
+                <li><i class="fas fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script> <!-- Link to external JS -->
 </body>
 </html>
