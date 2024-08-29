@@ -3,36 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Your Name</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Morteza Homayounfar - Personal Website</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
 </head>
 <body>
     <header class="header">
         <div class="container">
-            <h1>Projects</h1>
-            <p>Detailed information about my projects, including images, descriptions, and key achievements.</p>
+            <h1>Morteza Homayounfar</h1>
+            <p>PhD student at TU Delft and ErasmusMC. Specializing in AI and medical imaging.</p>
         </div>
     </header>
 
     <div class="container">
-        <div class="project">
-            <h2>Project Name 1</h2>
-            <img src="image/covidctnet_2d.png" alt="Project Image 1" class="project-image">
-            <p>Description of what this project was about, your role, and the impact it had.</p>
+        <div class="summary">
+            <h2>About Me</h2>
+            <p>I am a PhD student in a joint program between TU Delft and ErasmusMC, focusing on the development of a 5D growth model to study hip joint growth trajectory using generative and fundamental models. My background includes significant experience in machine learning, medical imaging, and biomedical engineering.</p>
         </div>
 
-        <div class="project">
-            <h2>Project Name 2</h2>
-            <img src="path/to/your-image2.jpg" alt="Project Image 2" class="project-image">
-            <p>Description of another project, highlighting key achievements and skills demonstrated.</p>
+        <div class="tabs">
+            <div class="tab active-tab" onclick="openTab(event, 'latest-news')">Latest News</div>
+            <div class="tab" onclick="openTab(event, 'projects')">Projects</div>
+            <div class="tab" onclick="openTab(event, 'contact')">Contact</div>
         </div>
 
-        <!-- Add more projects as needed -->
+        <div id="latest-news" class="tab-content active-content">
+            <h2>Latest News</h2>
+            <p>Here you can include your most recent career updates, events, or news. For example:</p>
+            <ul>
+                <li><strong>August 2023:</strong> Started PhD program at TU Delft and ErasmusMC focusing on 5D growth model for hip joint growth.</li>
+                <li><strong>May 2022 - July 2023:</strong> Worked as a Machine Learning Engineer at Snowhill Science.</li>
+                <li><strong>May 2022 - July 2023:</strong> Served as a Research Assistant at Medical-AI group, The Hong Kong University.</li>
+                <li><strong>March 2021 - May 2022:</strong> Honorary Research Associate in Applied Oral Science at the University of Hong Kong.</li>
+                <li><strong>August 2020:</strong> Published a research paper on smartwatch battery utilization.</li>
+                <li><strong>April 2021:</strong> Awarded Best New Algorithm for AI at The Global Annual Achievement Awards.</li>
+            </ul>
+        </div>
+
+        <div id="projects" class="tab-content">
+            <h2>Projects</h2>
+            <p>Select a project to view detailed information:</p>
+            <div class="project-tabs">
+                <div class="tab active-tab" onclick="openProjectTab(event, 'project1')">AI-Based Health Monitoring</div>
+                <div class="tab" onclick="openProjectTab(event, 'project2')">Smart Vending Machine</div>
+                <div class="tab" onclick="openProjectTab(event, 'project3')">Autonomous Drone Navigation</div>
+            </div>
+
+            <div id="project1" class="project-content active-content">
+                <h2>AI-Based Health Monitoring</h2>
+                <img src="path/to/project1-image.jpg" alt="AI-Based Health Monitoring" class="project-image">
+                <p>This project involved developing a comprehensive health monitoring system using AI techniques. The system analyzes data from wearable sensors to monitor vital signs and predict potential health issues.</p>
+                <p><strong>Technologies Used:</strong> Python, TensorFlow, Scikit-Learn, OpenCV</p>
+                <p><strong>Impact:</strong> Improved early diagnosis and prevention of chronic diseases by analyzing real-time health data.</p>
+            </div>
+
+            <div id="project2" class="project-content">
+                <h2>Smart Vending Machine</h2>
+                <img src="path/to/project2-image.jpg" alt="Smart Vending Machine" class="project-image">
+                <p>This project focused on designing a smart vending machine that uses machine learning algorithms to predict and recommend products based on user preferences and purchase history.</p>
+                <p><strong>Technologies Used:</strong> Arduino, Python, Machine Learning, IoT</p>
+                <p><strong>Impact:</strong> Enhanced user experience by providing personalized product recommendations and optimized inventory management.</p>
+            </div>
+
+            <div id="project3" class="project-content">
+                <h2>Autonomous Drone Navigation</h2>
+                <img src="path/to/project3-image.jpg" alt="Autonomous Drone Navigation" class="project-image">
+                <p>This project involved creating an autonomous navigation system for drones, enabling them to navigate complex environments using computer vision and path planning algorithms.</p>
+                <p><strong>Technologies Used:</strong> C++, ROS, OpenCV, UAVs</p>
+                <p><strong>Impact:</strong> Advanced the capabilities of autonomous drones in surveying and mapping applications, reducing human intervention and improving accuracy.</p>
+            </div>
+        </div>
+
+        <div id="contact" class="tab-content">
+            <h2>Contact Me</h2>
+            <p>You can reach out to me via the following channels:</p>
+            <ul>
+                <li><i class="fas fa-envelope"></i> Email: m.homayounfar@tudelft.nl</li>
+                <li><i class="fas fa-phone"></i> Phone: +123 456 7890</li>
+                <li><i class="fas fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></li>
+                <li><i class="fas fa-github"></i> GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></li>
+                <li><i class="fas fa-graduation-cap"></i> Google Scholar: <a href="https://scholar.google.com/citations?user=yourprofileid" target="_blank">scholar.google.com/citations?user=yourprofileid</a></li>
+            </ul>
+        </div>
     </div>
 
     <footer>
-        <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+        <p>&copy; 2024 Morteza Homayounfar. All Rights Reserved.</p>
     </footer>
+
+    <script src="scripts.js"></script> <!-- Link to external JS -->
 </body>
 </html>
