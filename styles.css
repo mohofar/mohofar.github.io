@@ -1,0 +1,97 @@
+/* styles.css */
+
+/* General Reset */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+}
+
+.nav-tabs {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-tabs .tab {
+    float: left;
+    padding: 14px 20px;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+}
+
+.nav-tabs .tab:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.nav-tabs .tab.active {
+    background-color: #555;
+    color: white;
+}
+
+/* Content Sections */
+.tab-content {
+    display: none; /* Hidden by default */
+    padding: 20px;
+}
+
+#news {
+    display: block; /* Show the first tab by default */
+}
+
+/* Latest News */
+.news-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.news-list li {
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Form */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #45a049;
+}
