@@ -1,116 +1,11 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-}
+/* Existing styles */
 
-.header {
-    background-color: #001327;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-.header h1 {
-    margin: 0;
-}
-
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-}
-
-.summary {
+.project {
     background-color: #fff;
     padding: 20px;
     margin-top: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.summary h2 {
-    margin-top: 0;
-}
-
-.tabs {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-    background-color: #007BFF;
-    border-radius: 5px;
-}
-
-.tab {
-    flex: 1;
-    text-align: center;
-    padding: 10px 0;
-    cursor: pointer;
-    color: #fff;
-    transition: background-color 0.3s;
-}
-
-.tab:hover, .active-tab {
-    background-color: #000b16;
-}
-
-.tab-content {
-    display: none;
-    background-color: #fff;
-    padding: 20px;
-    margin-top: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.active-content {
-    display: block;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-.project-tabs {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-    background-color: #007BFF;
-    border-radius: 5px;
-}
-
-.project-tabs .tab {
-    flex: 1;
-    text-align: center;
-    padding: 10px 0;
-    cursor: pointer;
-    color: #fff;
-    transition: background-color 0.3s;
-}
-
-.project-tabs .tab:hover, .project-tabs .active-tab {
-    background-color: #000b16;
-}
-
-.project-content {
-    display: none;
-    background-color: #fff;
-    padding: 20px;
-    margin-top: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.project-content.active-content {
-    display: block;
 }
 
 .project-image {
@@ -119,4 +14,18 @@ footer {
     border-radius: 5px;
     margin-top: 10px;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+/* Style for nested tabs in projects section */
+.project-tabs {
+    margin-top: 20px;
+}
+
+.project-tabs .tab {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+.project-tabs .tab:hover, .project-tabs .active-tab {
+    background-color: #000b16;
 }
