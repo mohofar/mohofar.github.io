@@ -3,65 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Personal Website</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+    <title>Morteza Homayounfar | CV</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <h1>Your Name</h1>
-            <p>A brief summary about yourself. Your professional title, interests, and what makes you unique.</p>
-        </div>
+    <header>
+        <h1>Morteza Homayounfar</h1>
+        <p>PhD Student (Joint program) at TU Delft and Erasmus MC</p>
     </header>
-
-    <div class="container">
-        <div class="summary">
-            <h2>About Me</h2>
-            <p>Your personal introduction goes here. This should be a concise, engaging summary that gives visitors an idea of who you are, your background, and your career goals.</p>
-        </div>
-
-        <div class="tabs">
-            <div class="tab active-tab" onclick="openTab(event, 'latest-news')">Latest News</div>
-            <div class="tab" onclick="openTab(event, 'projects')">Projects</div>
-            <div class="tab" onclick="openTab(event, 'contact')">Contact</div>
-        </div>
-
-        <div id="latest-news" class="tab-content active-content">
-            <h2>Latest News</h2>
-            <p>Here you can include your most recent career updates, events, or news. For example:</p>
+    
+    <section id="contact">
+        <h2>Contact Information</h2>
+        <ul>
+            <li>Email: <a href="mailto:m.homayounfar@tudelft.nl">m.homayounfar@tudelft.nl</a></li>
+            <li>Location: Delft, The Netherlands</li>
+            <li>Google Scholar: <a href="https://scholar.google.com/citations?user=JLIBa2AAAAAJ&hl=en" target="_blank">Link</a></li>
+            <li>GitHub: <a href="https://github.com/mohofar" target="_blank">Link</a></li>
+        </ul>
+    </section>
+    
+    <section id="current-position">
+        <h2>Current Position</h2>
+        <p><strong>PhD Student (Joint program) at TU Delft and Erasmus MC</strong></p>
+        <p>Aug 2023 – Present, Delft, The Netherlands</p>
+        <p>Developing a 5D growth model to study hip joint growth trajectory using generative and fundamental models.</p>
+    </section>
+    
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="job">
+            <h3>Machine Learning Engineer (Part-Time) at Snowhill Science</h3>
+            <p>May 2022 – July 2023, Remote</p>
             <ul>
-                <li><strong>January 2024:</strong> Promoted to Senior Developer at XYZ Corp.</li>
-                <li><strong>August 2023:</strong> Completed a major project on AI and machine learning, significantly improving process efficiency.</li>
-                <li><strong>May 2022:</strong> Graduated with a Master’s degree in Computer Science from ABC University.</li>
-                <li><strong>March 2021:</strong> Published a research paper on deep learning techniques in a renowned journal.</li>
+                <li>Led two projects focused on validating novel models in aging disease models related to longevity.</li>
+                <li>Designed experiments, tested models, and prepared manuscripts for publication.</li>
             </ul>
         </div>
-
-        <div id="projects" class="tab-content">
-            <h2>Projects</h2>
-            <p>Details about your professional or personal projects can go here. For example:</p>
+        <div class="job">
+            <h3>Research Assistant at Medical-AI Group, The Hong Kong University</h3>
+            <p>May 2022 – July 2023, Hong Kong, China</p>
             <ul>
-                <li><strong>Project Name 1:</strong> A brief description of what this project was about, your role, and the impact it had.</li>
-                <li><strong>Project Name 2:</strong> Description of another project, highlighting key achievements and skills demonstrated.</li>
+                <li>Developed a novel filter pruning method for medical images and an on-device application, available on <a href="https://github.com/mohofar/Beta-Rank" target="_blank">GitHub</a>.</li>
+                <li>Created a model for deriving MRI fat features using DEXA devices with an R2 score exceeding 94%.</li>
+                <li>Contributed to the submission of two research publications, one currently under review.</li>
             </ul>
         </div>
-
-        <div id="contact" class="tab-content">
-            <h2>Contact Me</h2>
-            <p>You can reach out to me via the following channels:</p>
-            <ul>
-                <li><i class="fas fa-envelope"></i> Email: your.email@example.com</li>
-                <li><i class="fas fa-phone"></i> Phone: +123 456 7890</li>
-                <li><i class="fas fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></li>
-            </ul>
+    </section>
+    
+    <section id="education">
+        <h2>Education</h2>
+        <div class="education-item">
+            <h3>PhD in Biomedical Imaging</h3>
+            <p>TU Delft and Erasmus MC, Aug 2023 – Present</p>
         </div>
-    </div>
+        <div class="education-item">
+            <h3>Master of Engineering in Biomedical Engineering</h3>
+            <p>Amirkabir University of Technology, Sep 2016 – Feb 2019</p>
+            <p>Thesis: Diagnosis of lung cancer from CT scan images using deep neural networks.</p>
+        </div>
+        <div class="education-item">
+            <h3>Bachelor of Engineering in Electrical Engineering and Electronics</h3>
+            <p>Urmia University of Technology, Sep 2011 – Jun 2016</p>
+        </div>
+    </section>
+    
+    <section id="publications">
+        <h2>Publications</h2>
+        <ul>
+            <li>Shabani, S., <strong>Homayounfar, M.</strong>, Vardhanabhuti, V., Kohi-moghadam, M. (2022). Self-supervised region-aware segmentation of COVID-19 pneumonia on CT scans.</li>
+        </ul>
+    </section>
+    
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Python</li>
+            <li>MATLAB</li>
+            <li>PyTorch</li>
+            <li>TensorFlow</li>
+            <li>OpenCV</li>
+        </ul>
+    </section>
+    
+    <section id="languages">
+        <h2>Languages</h2>
+        <ul>
+            <li>Persian (Native)</li>
+            <li>English (Fluent)</li>
+            <li>Chinese (Intermediate)</li>
+        </ul>
+    </section>
 
-    <footer>
-        <p>&copy; 2024 Your Name. All Rights Reserved.</p>
-    </footer>
-
-    <script src="scripts.js"></script> <!-- Link to external JS -->
+    <script src="script.js"></script>
 </body>
 </html>
