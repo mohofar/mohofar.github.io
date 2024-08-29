@@ -1,68 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Morteza Homayounfar | CV</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header class="header">
-        <div class="container">
-            <h1>Morteza Homayounfar</h1>
-            <p>PhD Student (Joint program) at TU Delft and Erasmus MC</p>
-        </div>
-    </header>
-    
-    <div class="container">
-        <div class="tabs">
-            <div class="tab active-tab" data-content="about-me">About Me</div>
-            <div class="tab" data-content="projects">Projects</div>
-            <div class="tab" data-content="latest">Latest Publications</div>
-            <div class="tab" data-content="contact">Contact</div>
-        </div>
-        
-        <div id="about-me" class="tab-content active-content summary">
-            <h2>About Me</h2>
-            <p>PhD Student (Joint program) at TU Delft and Erasmus MC, specializing in developing 5D growth models to study hip joint growth trajectory using generative and fundamental models. I have a strong background in biomedical imaging and machine learning, with experience in both research and industry settings.</p>
-        </div>
-        
-        <div id="projects" class="tab-content summary">
-            <h2>Projects</h2>
-            <div class="project">
-                <h3>Machine Learning Engineer at Snowhill Science</h3>
-                <p><strong>May 2022 – July 2023, Remote</strong></p>
-                <p>Led two projects focusing on validating novel models in aging disease models related to longevity. Designed experiments, tested models, and prepared manuscripts for publication.</p>
-            </div>
-            <div class="project">
-                <h3>Research Assistant at Medical-AI Group, The Hong Kong University</h3>
-                <p><strong>May 2022 – July 2023, Hong Kong, China</strong></p>
-                <p>Developed a novel filter pruning method for medical images and an on-device application. Created a model for deriving MRI fat features using DEXA devices with an R2 score exceeding 94%. Contributed to two research publications, one currently under review.</p>
-            </div>
-        </div>
-        
-        <div id="latest" class="tab-content summary">
-            <h2>Latest Publications</h2>
-            <ul>
-                <li>Shabani, S., <strong>Homayounfar, M.</strong>, Vardhanabhuti, V., Kohi-moghadam, M. (2022). Self-supervised region-aware segmentation of COVID-19 pneumonia on CT scans.</li>
-            </ul>
-        </div>
-        
-        <div id="contact" class="tab-content summary">
-            <h2>Contact</h2>
-            <ul>
-                <li>Email: <a href="mailto:m.homayounfar@tudelft.nl">m.homayounfar@tudelft.nl</a></li>
-                <li>Location: Delft, The Netherlands</li>
-                <li>Google Scholar: <a href="https://scholar.google.com/citations?user=JLIBa2AAAAAJ&hl=en" target="_blank">Link</a></li>
-                <li>GitHub: <a href="https://github.com/mohofar" target="_blank">Link</a></li>
-            </ul>
-        </div>
-    </div>
-    
-    <footer>
-        <p>&copy; 2024 Morteza Homayounfar. All rights reserved.</p>
-    </footer>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+.header {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.summary {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.summary h2 {
+    margin-top: 0;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    background-color: #007BFF;
+    border-radius: 5px;
+}
+
+.tab {
+    width: 33.33%;
+    text-align: center;
+    padding: 10px 0;
+    cursor: pointer;
+    color: #fff;
+}
+
+.tab:hover, .active-tab {
+    background-color: #0056b3;
+}
+
+.tab-content {
+    display: none;
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.active-content {
+    display: block;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
