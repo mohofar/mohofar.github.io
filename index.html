@@ -23,7 +23,7 @@
 
         <div class="tabs">
             <div class="tab active-tab" onclick="openTab(event, 'latest-news')">Latest News</div>
-            <a href="projects.html" class="tab">Projects</a> <!-- Updated to link to new page -->
+            <div class="tab" onclick="openTab(event, 'projects')">Projects</div>
             <div class="tab" onclick="openTab(event, 'contact')">Contact</div>
         </div>
 
@@ -35,11 +35,44 @@
                 <li><strong>August 2023:</strong> Completed a major project on AI and machine learning, significantly improving process efficiency.</li>
                 <li><strong>May 2022:</strong> Graduated with a Master’s degree in Computer Science from ABC University.</li>
                 <li><strong>March 2021:</strong> Published a research paper on deep learning techniques in a renowned journal.</li>
-                <!-- Add more latest news here -->
                 <li><strong>July 2023:</strong> Awarded Best New Algorithm for AI at The Global Annual Achievement Awards.</li>
                 <li><strong>June 2023:</strong> Invited speaker at the International Conference on AI in Medicine.</li>
                 <li><strong>April 2023:</strong> Research paper accepted at IEEE Conference on Computer Vision.</li>
             </ul>
+        </div>
+
+        <div id="projects" class="tab-content">
+            <h2>Projects</h2>
+            <p>Select a project to view detailed information:</p>
+            <div class="project-tabs">
+                <div class="tab active-tab" onclick="openProjectTab(event, 'project1')">AI-Based Health Monitoring</div>
+                <div class="tab" onclick="openProjectTab(event, 'project2')">Smart Vending Machine</div>
+                <div class="tab" onclick="openProjectTab(event, 'project3')">Autonomous Drone Navigation</div>
+            </div>
+
+            <div id="project1" class="project-content active-content">
+                <h2>AI-Based Health Monitoring</h2>
+                <img src="path/to/project1-image.jpg" alt="AI-Based Health Monitoring" class="project-image">
+                <p>This project involved developing a comprehensive health monitoring system using AI techniques. The system analyzes data from wearable sensors to monitor vital signs and predict potential health issues.</p>
+                <p><strong>Technologies Used:</strong> Python, TensorFlow, Scikit-Learn, OpenCV</p>
+                <p><strong>Impact:</strong> Improved early diagnosis and prevention of chronic diseases by analyzing real-time health data.</p>
+            </div>
+
+            <div id="project2" class="project-content">
+                <h2>Smart Vending Machine</h2>
+                <img src="path/to/project2-image.jpg" alt="Smart Vending Machine" class="project-image">
+                <p>This project focused on designing a smart vending machine that uses machine learning algorithms to predict and recommend products based on user preferences and purchase history.</p>
+                <p><strong>Technologies Used:</strong> Arduino, Python, Machine Learning, IoT</p>
+                <p><strong>Impact:</strong> Enhanced user experience by providing personalized product recommendations and optimized inventory management.</p>
+            </div>
+
+            <div id="project3" class="project-content">
+                <h2>Autonomous Drone Navigation</h2>
+                <img src="path/to/project3-image.jpg" alt="Autonomous Drone Navigation" class="project-image">
+                <p>This project involved creating an autonomous navigation system for drones, enabling them to navigate complex environments using computer vision and path planning algorithms.</p>
+                <p><strong>Technologies Used:</strong> C++, ROS, OpenCV, UAVs</p>
+                <p><strong>Impact:</strong> Advanced the capabilities of autonomous drones in surveying and mapping applications, reducing human intervention and improving accuracy.</p>
+            </div>
         </div>
 
         <div id="contact" class="tab-content">
