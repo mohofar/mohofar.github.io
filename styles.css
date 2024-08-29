@@ -57,6 +57,27 @@ body {
 .active-content {
     display: block;
 }
+/* Existing styles */
+
+.project {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.project h2 {
+    margin-top: 0;
+}
+
+.project-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
 footer {
     background-color: #333;
     color: #fff;
