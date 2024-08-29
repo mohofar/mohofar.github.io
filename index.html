@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <h1>Your Name</h1>
+        <p>A brief summary about you, your profession, and interests.</p>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="navbar">
+        <ul class="nav-tabs">
+            <li class="tab active" onclick="openTab('news')">Latest News</li>
+            <li class="tab" onclick="openTab('contact')">Contact</li>
+        </ul>
+    </nav>
+
+    <!-- Latest News Section -->
+    <div id="news" class="tab-content">
+        <h2>Latest News</h2>
+        <ul class="news-list">
+            <li>Event 1: Description of the event that happened in your life.</li>
+            <li>Event 2: Description of another significant event.</li>
+            <li>Event 3: More events can be added here as needed.</li>
+        </ul>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="tab-content" style="display:none;">
+        <h2>Contact Me</h2>
+        <form>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message"></textarea><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
