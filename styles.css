@@ -110,7 +110,40 @@ footer {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
+/* Style for collapsible project and publication sections */
+.collapsible {
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    border-radius: 5px;
+}
 
+.collapsible:hover, .collapsible.active {
+    background-color: #0056b3;
+}
+
+.content {
+    padding: 0 20px;
+    display: none;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.content p {
+    padding: 10px 0;
+}
 .project-content.active-content {
     display: block;
 }
