@@ -1,91 +1,106 @@
-/* General Page Styles */
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
 }
 
 .container {
     width: 80%;
-    margin: 20px auto;
-    background-color: #ffffff;
+    margin: auto;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
+.header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
     text-align: center;
-    color: #333;
 }
 
-p {
-    color: #666;
+.header h1 {
+    margin: 0;
 }
 
-/* Style for tabs */
+.header p {
+    margin: 10px 0 0;
+}
+
+/* Tabs Styles */
 .tabs {
     display: flex;
-    justify-content: space-around;
     cursor: pointer;
-    margin-bottom: 20px;
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
 .tab {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    background: #f4f4f4;
+    border-right: 1px solid #ddd;
+}
+
+.tab:last-child {
+    border-right: none;
+}
+
+.tab.active-tab {
+    background: #fff;
+    border-bottom: 1px solid #fff;
+    font-weight: bold;
 }
 
 .tab:hover {
-    background-color: #0056b3;
+    background: #ddd;
 }
 
-.active-tab {
-    background-color: #0056b3;
-}
-
+/* Tab Content Styles */
 .tab-content {
     display: none;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-top: none;
 }
 
-.active-content {
+.tab-content.active-content {
     display: block;
 }
 
-/* Style for collapsible project and publication sections */
+/* Collapsible Styles */
 .collapsible {
-    background-color: #007BFF;
-    color: white;
+    background: #f4f4f4;
+    color: #333;
     cursor: pointer;
     padding: 10px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 18px;
-    transition: background-color 0.3s;
-    margin-top: 10px;
+    border: 1px solid #ddd;
     border-radius: 5px;
+    margin-top: 10px;
+    text-align: left;
+    width: 100%;
 }
 
-.collapsible:hover, .collapsible.active {
-    background-color: #0056b3;
+.collapsible.active {
+    background: #e0e0e0;
 }
 
 .content {
-    padding: 0 20px;
     display: none;
-    overflow: hidden;
-    background-color: #f9f9f9;
+    padding: 10px;
     border: 1px solid #ddd;
-    margin-top: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-top: none;
+    background: #f9f9f9;
 }
 
-.content p {
+.footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
     padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
