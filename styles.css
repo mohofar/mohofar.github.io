@@ -1,115 +1,60 @@
+/* General Page Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    color: #333;
-}
-
-.header {
-    background-color: #001327;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-.header h1 {
-    margin: 0;
 }
 
 .container {
     width: 80%;
-    margin: auto;
-    overflow: hidden;
-}
-
-.summary {
-    background-color: #fff;
+    margin: 20px auto;
+    background-color: #ffffff;
     padding: 20px;
-    margin-top: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.summary h2 {
-    margin-top: 0;
+h2 {
+    text-align: center;
+    color: #333;
 }
 
+p {
+    color: #666;
+}
+
+/* Style for tabs */
 .tabs {
     display: flex;
     justify-content: space-around;
-    margin-top: 20px;
-    background-color: #007BFF;
-    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
 }
 
 .tab {
-    flex: 1;
-    text-align: center;
-    padding: 10px 0;
-    cursor: pointer;
-    color: #fff;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
     transition: background-color 0.3s;
 }
 
-.tab:hover, .active-tab {
-    background-color: #000b16;
+.tab:hover {
+    background-color: #0056b3;
+}
+
+.active-tab {
+    background-color: #0056b3;
 }
 
 .tab-content {
     display: none;
-    background-color: #fff;
-    padding: 20px;
-    margin-top: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .active-content {
     display: block;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-/* Ensure the project tabs are displayed in a vertical stack */
-.project-tabs {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-    background-color: #007BFF;
-    border-radius: 5px;
-}
-
-.project-tabs .tab {
-    text-align: left;
-    padding: 10px;
-    cursor: pointer;
-    color: #fff;
-    transition: background-color 0.3s;
-    width: 100%; /* Full width of the container */
-}
-
-.project-tabs .tab:hover, .project-tabs .active-tab {
-    background-color: #000b16;
-}
-
-/* Adjust project content to align with vertical tabs */
-.project-content {
-    display: none;
-    background-color: #fff;
-    padding: 20px;
-    margin-top: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
 /* Style for collapsible project and publication sections */
 .collapsible {
     background-color: #007BFF;
@@ -138,21 +83,9 @@ footer {
     border: 1px solid #ddd;
     margin-top: 10px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .content p {
     padding: 10px 0;
-}
-.project-content.active-content {
-    display: block;
-}
-
-
-.project-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-top: 10px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
