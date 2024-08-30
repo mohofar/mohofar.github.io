@@ -10,6 +10,11 @@ document.addEventListener("DOMContentLoaded", function () {
             description: "This paper presents CovidCTNet, a deep learning approach designed to diagnose COVID-19 using a small cohort of CT images.",
             publication: "Javaheri, T., Homayounfar, M., Amoozgar, Z., Reiazi, R., Homayounieh, F., Abbas, E., ... & Rawassizadeh, R. (2021). NPJ Digital Medicine, 4(1), 1-10."
         },
+        {
+            title: "Understanding Smartwatch Battery Utilization in the Wild",
+            description: "This paper explores smartwatch battery usage patterns and provides insights into optimizing battery life based on real-world data.",
+            publication: "Homayounfar, M., Malekijoo, A., Visuri, A., Dobbins, C., Peltonen, E., Pinsky, E., ... & Rawassizadeh, R. (2020). Sensors, 20(13), 3784."
+        },
         // Add more projects here...
     ];
 
