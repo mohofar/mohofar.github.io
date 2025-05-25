@@ -1,119 +1,139 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Morteza Homayounfar - Personal Website</title>
+    <title>Morteza Homayounfar - Academic Profile</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header class="header">
         <div class="container">
             <h1>Morteza Homayounfar</h1>
-            <p>PhD student at TU Delft and ErasmusMC. Specializing in AI and medical imaging.</p>
+            <p class="title">PhD Researcher in AI and Medical Imaging</p>
+            <p class="affiliations">TU Delft • ErasmusMC</p>
         </div>
     </header>
 
-    <div class="container">
-        <div class="summary">
-            <h2>About Me</h2>
-            <p>I am currently a PhD student in a joint program between TU Delft and ErasmusMC, focusing on the development of a 5D growth model to study hip joint growth trajectory using generative and fundamental models. My background includes a Master’s in Biomedical Engineering and significant experience in machine learning, medical imaging, and biomedical engineering.</p>
+    <nav class="main-nav">
+        <div class="container">
+            <a href="#about" class="nav-item active">About</a>
+            <a href="#research" class="nav-item">Research</a>
+            <a href="#publications" class="nav-item">Publications</a>
+            <a href="#news" class="nav-item">News</a>
+            <a href="#contact" class="nav-item">Contact</a>
         </div>
+    </nav>
 
-        <div class="tabs">
-            <div class="tab active-tab" onclick="openTab(event, 'latest-news')">Latest News</div>
-            <div class="tab" onclick="openTab(event, 'Projects and Publications')">Projects and Publications</div>
-            <div class="tab" onclick="openTab(event, 'contact')">Contact</div>
-        </div>
+    <main class="container">
+        <section id="about" class="section">
+            <div class="profile-grid">
+                <div class="profile-info">
+                    <h2>About Me</h2>
+                    <p>I am a PhD researcher in a joint program between TU Delft and ErasmusMC, focusing on the development of a 5D growth model to study hip joint growth trajectory using generative and fundamental models. My research interests lie at the intersection of artificial intelligence, medical imaging, and biomedical engineering.</p>
+                    
+                    <h3>Research Interests</h3>
+                    <ul class="interests-list">
+                        <li>Medical Image Analysis</li>
+                        <li>Deep Learning in Healthcare</li>
+                        <li>Generative Models</li>
+                        <li>Computer Vision</li>
+                        <li>Biomedical Engineering</li>
+                    </ul>
 
-        <div id="latest-news" class="tab-content active-content">
+                    <h3>Education</h3>
+                    <ul class="education-list">
+                        <li>
+                            <span class="year">2023-Present</span>
+                            <span class="degree">PhD in AI and Medical Imaging</span>
+                            <span class="institution">TU Delft & ErasmusMC, Netherlands</span>
+                        </li>
+                        <li>
+                            <span class="year">Previous</span>
+                            <span class="degree">Master's in Biomedical Engineering</span>
+                            <span class="institution">Your Previous University</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="research" class="section">
+            <h2>Current Research</h2>
+            <div class="research-project">
+                <h3>5D Growth Model for Hip Joint Development</h3>
+                <p>Developing advanced computational models to understand and predict hip joint growth trajectories using a combination of generative models and fundamental biomechanical principles. This research aims to improve early diagnosis and treatment planning for developmental hip disorders.</p>
+            </div>
+        </section>
+
+        <section id="publications" class="section">
+            <h2>Selected Publications</h2>
+            <div class="publications-list">
+                <div class="publication-item">
+                    <h3>Self-supervised Region-aware Segmentation of COVID-19 CT Images</h3>
+                    <p class="authors">Shabani, S., Homayounfar, M., Vardhanabhuti, V., Kohi-moghadam, M.</p>
+                    <p class="venue">Computers in Biology and Medicine, 149, 106033 (2022)</p>
+                    <div class="publication-links">
+                        <a href="#" class="paper-link"><i class="fas fa-file-pdf"></i> PDF</a>
+                        <a href="#" class="code-link"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <h3>CovidCTNet: An Open-source Deep Learning Approach to Diagnose COVID-19</h3>
+                    <p class="authors">Homayounfar, M., et al.</p>
+                    <p class="venue">Nature Partner Journals Digital Medicine (2021)</p>
+                    <div class="publication-links">
+                        <a href="https://www.nature.com/articles/s41746-021-00399-3" class="paper-link"><i class="fas fa-file-pdf"></i> PDF</a>
+                        <a href="https://github.com/mohofar/CovidCtNet" class="code-link"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="news" class="section">
             <h2>Latest News</h2>
-            <p>Here are some of my most recent updates:</p>
-            <ul>
-                <li><strong>Aug 2023:</strong> Started PhD program at TU Delft and ErasmusMC focusing on the development of a 5D growth model for hip joint growth trajectory.</li>
-                <li><strong>May 2022 - Jul 2023:</strong> Worked as a Machine Learning Engineer at Snowhill Science, leading projects related to aging disease models.</li>
-                <li><strong>May 2022 - Jul 2023:</strong> Served as a Research Assistant at the Medical-AI group, The Hong Kong University, developing novel filter pruning methods and contributing to MRI fat feature models.</li>
-                <li><strong>Mar 2021 - May 2022:</strong> Worked as an Honorary Research Associate in Applied Oral Science and Community Dental Care at the University of Hong Kong.</li>
-                <li><strong>Apr 2021:</strong> Awarded Best New Algorithm for AI at The Global Annual Achievement Awards.</li>
-                <li><strong>Aug 2020:</strong> Published a research paper on smartwatch battery utilization.</li>
-            </ul>
-        </div>
+            <div class="news-list">
+                <div class="news-item">
+                    <span class="date">August 2023</span>
+                    <p>Started PhD program at TU Delft and ErasmusMC</p>
+                </div>
+                <div class="news-item">
+                    <span class="date">May 2022 - July 2023</span>
+                    <p>Machine Learning Engineer at Snowhill Science</p>
+                </div>
+                <div class="news-item">
+                    <span class="date">April 2021</span>
+                    <p>Awarded Best New Algorithm for AI at The Global Annual Achievement Awards</p>
+                </div>
+            </div>
+        </section>
 
-<div id="Projects and Publications" class="tab-content">
-    <h2>Projects and Publications</h2>
-    <p>Select a publication or project to view detailed information:</p>
-
-    <!-- Collapsible buttons for each paper/project -->
-    <button class="collapsible">Self-supervised Region-aware Segmentation of COVID-19 CT Images</button>
-    <div class="content">
-        <p>This paper introduces a novel method for self-supervised region-aware segmentation of COVID-19 CT images using 3D GAN and contrastive learning.</p>
-        <p><strong>Publication:</strong> Shabani, S., Homayounfar, M., Vardhanabhuti, V., Kohi-moghadam, M. (2022). Computers in Biology and Medicine, 149, 106033.</p>
-    </div>
-
-    <button class="collapsible">CovidCTNet: An Open-source Deep Learning Approach to Diagnose COVID-19</button>
-    <div class="content">
-        
-           <p><b>Paper title:</b> CovidCTNet: an open-source deep Learning Approach to Diagnose Covid-19 Using Small Cohort of CT Images</p>
-            <p><b>RQ and solution:</b> The primary objective was to classify COVID CT images (2D or 3D) from CAP (community-acquired pneumonia)
-                and Control images. However, due to the limited number of COVID cases at that time, efforts were directed towards the development 
-                of a network capable of robust classification with a restricted sample size. The approach involved utilizing an anomaly detection network on
-                a synthetic CT slice (incorporating infection-like noises) to identify genuine infections within the 3D images, followed by their classification.
-                The pipeline is as follows (see more details in the paper).</p>
-            <p><b>Code:</b> https://github.com/mohofar/CovidCtNet</p>
-            <p><b>My Contribution:</b> Model development and implementation, writing the technical part of the paper.</p>
-            <p><b>Constraint:</b> The simulated infection lacks sufficient generality to encompass all lung infections effectively.</p>
-            <p><b>Link to publication:</b> https://www.nature.com/articles/s41746-021-00399-3</p>
-    </div>
-
-    <button class="collapsible">Understanding Smartwatch Battery Utilization in the Wild</button>
-    <div class="content">
-        <p>This paper explores smartwatch battery usage patterns and provides insights into optimizing battery life based on real-world data.</p>
-        <p><strong>Publication:</strong> Homayounfar, M., Malekijoo, A., Visuri, A., Dobbins, C., Peltonen, E., Pinsky, E., ... & Rawassizadeh, R. (2020). Sensors, 20(13), 3784.</p>
-    </div>
-
-    <button class="collapsible">A Multimodal Deep Learning Approach to Predicting Systemic Diseases from Oral Conditions</button>
-    <div class="content">
-        <p>This study employs a multimodal deep learning approach to predict systemic diseases based on oral conditions.</p>
-        <p><strong>Publication:</strong> Zhao, D., Homayounfar, M., Zhen, Z., Wu, M. Z., Yin Yu, S., Yiu, K. H., ... & Koohi-Moghadam, M. (2022). Diagnostics, 12(12), 3192.</p>
-    </div>
-
-    <button class="collapsible">FEDZIP: A Compression Framework for Communication-Efficient Federated Learning</button>
-    <div class="content">
-        <p>This paper introduces FEDZIP, a framework designed to enhance communication efficiency in federated learning through compression techniques.</p>
-        <p><strong>Publication:</strong> Malekijoo, A., Fadaeieslam, M.J., Malekijou, H., Homayounfar, M., Alizadeh-Shabdiz, F., & Rawassizadeh, R. (2021). arXiv preprint arXiv:2102.01593.</p>
-    </div>
-
-    <button class="collapsible">Mental Arousal Level Recognition Competition on the Shared Database</button>
-    <div class="content">
-        <p>This paper discusses a competition focused on recognizing mental arousal levels using shared databases and various algorithms.</p>
-        <p><strong>Publication:</strong> Saidi, M., Rezania, S., Khazaei, E., TaghiBeyglou, B., Hashemi, S.S., Kaveh, R., ... Homayounfar, M., et al. (2019). 27th Iranian Conference on Electrical Engineering (ICEE), IEEE.</p>
-    </div>
-
-    <button class="collapsible">K-space Based Motion Estimation for Polar fMRI Using Transfer Learning</button>
-    <div class="content">
-        <p>This study explores a k-space based motion estimation technique for polar fMRI, leveraging transfer learning to improve accuracy.</p>
-        <p><strong>Publication:</strong> Makhsousi, F., Homayounfar, M., Ghaffarzadeh, S., Nasiraei-Moghaddam, A. (2023). ISMRM 2023 Conference.</p>
-    </div>
-</div>
-
-
-        <div id="contact" class="tab-content">
-            <h2>Contact Me</h2>
-            <p>You can reach out to me via the following channels:</p>
-            <ul>
-                <li><i class="fas fa-envelope"></i> Email: m.homayounfar@tudelft.nl</li>
-                <li><i class="fa fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/morteza-homayounfar-mohofar" target="_blank">https://www.linkedin.com/in/morteza-homayounfar-mohofar</a></li>
-                <li><i class="fa fa-github"></i> GitHub: <a href="https://github.com/mohofar" target="_blank">github.com/mohofar</a></li>
-                <li><i class="fas fa-graduation-cap"></i> Google Scholar: <a href="https://scholar.google.co.uk/citations?user=JLIBa2AAAAAJ&hl=en" target="_blank">scholar.google.com/citations?user=yourprofileid</a></li>
-                <li><i class="fab fa-youtube"></i> YouTube: <a href="https://www.youtube.com/@mohofar" target="_blank">https://www.youtube.com/@mohofar</a></li>
-            </ul>
-        </div>
-    </div>
+        <section id="contact" class="section">
+            <h2>Contact</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> m.homayounfar@tudelft.nl</p>
+                    <p><i class="fas fa-map-marker-alt"></i> TU Delft, Netherlands</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/morteza-homayounfar-mohofar" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/mohofar" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://scholar.google.co.uk/citations?user=JLIBa2AAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+                    <a href="https://www.youtube.com/@mohofar" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2024 Morteza Homayounfar. All Rights Reserved.</p>
+        <div class="container">
+            <p>&copy; 2024 Morteza Homayounfar. All Rights Reserved.</p>
+        </div>
     </footer>
 
-    <script src="scripts.js"></script> <!-- Link to external JS -->
+    <script src="scripts.js"></script>
 </body>
 </html>
