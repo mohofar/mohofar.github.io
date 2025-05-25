@@ -321,6 +321,17 @@ body {
     text-decoration: underline;
 }
 
+.episode-links-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.episode-links-group .episode-link {
+    margin-right: 10px; /* Keep some spacing if they don't wrap */
+}
+
 /* Footer Styles */
 footer {
     background: var(--light-gray);
