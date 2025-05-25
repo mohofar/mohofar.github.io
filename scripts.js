@@ -54,15 +54,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Handle active navigation state on scroll
-    window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section');
+    const animatedSections = document.querySelectorAll('.animated-section');
+
+    const activateSection = () => {
         let current = '';
-        const sections = document.querySelectorAll('section');
-        
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            
-            if (window.pageYOffset >= sectionTop - 60) {
+            if (window.pageYOffset >= sectionTop - 70) { // Adjusted offset for sticky nav
                 current = section.getAttribute('id');
             }
         });
@@ -73,5 +72,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 item.classList.add('active');
             }
         });
-    });
+
+        // Trigger animations for sections in view
+        animatedSections.forEach(section => {
+            const sectionTop = section.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            if (sectionTop < windowHeight - 100) { // Trigger when 100px from bottom of viewport
+                section.classList.add('is-visible');
+            } else {
+                 // Optional: Remove class if you want animation to re-trigger on scroll up
+                 // section.classList.remove('is-visible'); 
+            }
+        });
+    };
+
+    window.addEventListener('scroll', activateSection);
+    activateSection(); // Call once on load to animate sections already in view
 });
