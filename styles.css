@@ -112,15 +112,6 @@ body {
     margin: 0;
 }
 
-.interests-list li {
-    display: inline-block;
-    background: var(--light-gray);
-    padding: 8px 15px;
-    margin: 5px;
-    border-radius: 20px;
-    font-size: 0.9em;
-}
-
 .education-list li {
     margin-bottom: 20px;
 }
@@ -277,20 +268,23 @@ body {
 
 .episodes-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
 }
 
 .episode-item {
     background: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-    transition: box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .episode-item:hover {
-    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.12);
+    transform: translateY(-2px);
 }
 
 .episode-item h4 {
