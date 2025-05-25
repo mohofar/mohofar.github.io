@@ -106,53 +106,6 @@ body {
     gap: 40px;
 }
 
-/* Enhanced Profile Grid for About Me section */
-.profile-grid-enhanced {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
-    align-items: flex-start;
-}
-
-.profile-image-area {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.profile-image-placeholder {
-    width: 200px;
-    height: 200px;
-    background-color: var(--light-gray);
-    border: 2px dashed var(--border-color);
-    border-radius: 50%; /* Makes it circular */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    color: var(--secondary-color);
-}
-
-.profile-image-placeholder i {
-    font-size: 3em;
-    margin-bottom: 10px;
-}
-
-.profile-image-placeholder span {
-    font-size: 0.9em;
-}
-
-/* On larger screens, make About Me two columns */
-@media (min-width: 992px) {
-    .profile-grid-enhanced {
-        grid-template-columns: 250px 1fr; /* Adjust width of image column as needed */
-        gap: 60px;
-    }
-    .profile-image-area {
-        margin-bottom: 0;
-    }
-}
-
 .interests-list, .education-list {
     list-style: none;
     padding: 0;
@@ -416,9 +369,5 @@ footer {
     
     .nav-item {
         padding: 10px 15px;
-    }
-    
-    .profile-grid-enhanced {
-        grid-template-columns: 1fr;
     }
 }
