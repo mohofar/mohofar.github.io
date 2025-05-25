@@ -140,6 +140,13 @@ body {
     color: #666;
 }
 
+.education-list .thesis-topic {
+    font-style: italic;
+    color: #777;
+    margin-top: 5px;
+    font-size: 0.9em;
+}
+
 /* Publications Styles */
 .publications-list {
     display: grid;
