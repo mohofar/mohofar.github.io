@@ -3,203 +3,344 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Morteza Homayounfar - Academic Profile</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap">
+    <title>BioMech-AI with Mory</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body { background: #f8f7f3 url('paper-grain.png'); font-family: 'Inter', serif; color: #222; }
+        .hero-section { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; height: 100vh; background: #fff; position: relative; }
+        .hero-logo, .hero-visual img { width: 260px !important; height: 260px !important; max-width: 90vw; max-height: 40vh; margin-bottom: 2rem; object-fit: contain; border-radius: 0; box-shadow: none; background: none; }
+        .hero-title { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: #222; margin-bottom: 0.3em; letter-spacing: 0.01em; }
+        .hero-tagline { font-size: 1.7rem; color: #0077b6; margin-bottom: 2em; }
+        .hero-quote { font-size: 2rem; font-family: 'Playfair Display', serif; color: #444; margin-bottom: 2.5em; min-height: 2.5em; }
+        .typewriter { border-right: .08em solid #0077b6; white-space: nowrap; overflow: hidden; }
+        .hero-visual { display: flex; align-items: center; justify-content: center; margin-bottom: 2em; background: none; box-shadow: none; width: auto; height: auto; }
+        .cta-btn { background: #0077b6; color: #fff; border: none; border-radius: 24px; padding: 0.8em 2em; font-size: 1.1rem; cursor: pointer; transition: background 0.2s; }
+        .cta-btn:hover { background: #005f8a; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 2rem; color: #222; margin-top: 2.5em; margin-bottom: 1em; }
+        .lab-journal { display: flex; flex-direction: column; align-items: center; }
+        .moment { background: #fffbe9; border-radius: 16px; box-shadow: 0 2px 12px #0001; margin: 1.5em 0; padding: 2em; max-width: 700px; display: flex; align-items: center; gap: 2em; transition: box-shadow 0.2s; }
+        .moment:hover { box-shadow: 0 4px 24px #0077b62a; }
+        .moment-sketch { width: 100px; height: 100px; flex-shrink: 0; border-radius: 12px; background: #e0f4ff; box-shadow: 0 2px 8px #0077b62a; object-fit: contain; margin-right: 1em; opacity: 1; position: static; }
+        .moment-quote { font-style: italic; color: #0077b6; margin-top: 1em; font-size: 1.3em; }
+        .moment-link { display: inline-block; margin-top: 1em; color: #0077b6; text-decoration: underline; }
+        .projects-section { display: flex; flex-direction: column; align-items: center; }
+        .projects-grid { display: flex; gap: 2em; flex-wrap: wrap; justify-content: center; }
+        .project-card { background: #fff; border-radius: 16px; box-shadow: 0 2px 12px #0001; padding: 1.5em; width: 280px; margin: 1em 0; cursor: pointer; transition: box-shadow 0.2s; position: relative; }
+        .project-card:hover { box-shadow: 0 4px 24px #0077b62a; }
+        .project-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #222; margin-bottom: 0.5em; }
+        .project-tech { font-size: 0.95em; color: #0077b6; margin-bottom: 0.5em; }
+        .project-purpose { font-size: 1em; color: #444; }
+        .project-modal { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #0008; align-items: center; justify-content: center; z-index: 1000; }
+        .project-modal-content { background: #fff; border-radius: 16px; padding: 2em; max-width: 500px; }
+        .close-modal { position: absolute; top: 1em; right: 1em; font-size: 1.5em; color: #0077b6; cursor: pointer; }
+        .zora-section { background: #f8f7f3; padding: 2em 0; display: flex; flex-direction: column; align-items: center; }
+        .zora-title { font-family: 'Playfair Display', serif; font-size: 2rem; color: #222; margin-bottom: 1em; }
+        .zora-episodes { display: flex; gap: 1.5em; flex-wrap: wrap; justify-content: center; }
+        .zora-episode { background: #fff; border-radius: 12px; box-shadow: 0 2px 8px #0001; padding: 1em 1.5em; width: 220px; margin: 1em 0; position: relative; }
+        .zora-cassette { position: absolute; top: -1.5em; left: 1em; width: 48px; }
+        .zora-quote { font-style: italic; color: #0077b6; margin-top: 0.5em; }
+        .zora-avatar { width: 40px; height: 40px; border-radius: 50%; background: #0077b6; display: inline-block; margin-right: 0.5em; vertical-align: middle; }
+        .zora-chat { background: #fff; border-radius: 24px; box-shadow: 0 2px 8px #0077b62a; padding: 1em 2em; margin-top: 1.5em; display: flex; align-items: center; gap: 1em; }
+        .publications-section { background: #fffbe9; padding: 2em 0; }
+        .publications-grid { display: flex; flex-wrap: wrap; gap: 2em; justify-content: center; }
+        .publication-card { background: #fff; border-radius: 16px; box-shadow: 0 2px 12px #0001; padding: 1.5em; width: 320px; margin: 1em 0; position: relative; }
+        .pub-journal { font-size: 0.95em; color: #0077b6; margin-bottom: 0.2em; }
+        .pub-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #222; margin-bottom: 0.5em; }
+        .pub-tags { font-size: 0.9em; color: #b08968; margin-bottom: 0.5em; }
+        .pub-abstract { font-size: 0.98em; color: #444; }
+        .pub-annotation { position: absolute; left: 1em; bottom: 1em; font-family: 'Playfair Display', cursive; color: #b08968; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+        .publication-card:hover .pub-annotation { opacity: 1; }
+        .contact-section { background: #f8f7f3; padding: 2em 0; display: flex; flex-direction: column; align-items: center; }
+        .contact-form { background: #fff; border-radius: 16px; box-shadow: 0 2px 12px #0001; padding: 2em; width: 340px; display: flex; flex-direction: column; gap: 1.2em; }
+        .form-row label { font-family: 'Playfair Display', serif; color: #0077b6; }
+        .form-row input, .form-row textarea { width: 100%; border: 1px solid #ddd; border-radius: 8px; padding: 0.7em; font-size: 1em; background: #f8f7f3; }
+        .btn-clinical { background: #0077b6; color: #fff; border: none; border-radius: 24px; padding: 0.7em 2em; font-size: 1.1rem; cursor: pointer; margin-top: 1em; }
+        .btn-clinical:hover { background: #005f8a; }
+        .lab-badge { margin-top: 1.5em; background: #fffbe9; border-radius: 12px; padding: 0.7em 1.5em; font-family: 'Playfair Display', serif; color: #b08968; box-shadow: 0 2px 8px #0001; }
+        .collab-message { margin-top: 1em; color: #0077b6; font-size: 1.1em; }
+        .pub-filter-bar { display:flex;gap:1em;justify-content:center;margin-bottom:1.5em; }
+        .pub-filter-btn { background: #0077b6; color: #fff; border: none; border-radius: 24px; padding: 0.6em 1.5em; font-size: 0.9rem; cursor: pointer; transition: background 0.2s; }
+        .pub-filter-btn:hover { background: #005f8a; }
+        @media (max-width: 700px) {
+            .projects-grid, .publications-grid, .zora-episodes { flex-direction: column; align-items: center; }
+            .hero-visual { width: 95vw; height: 160px; }
+        }
+    </style>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <h1>Morteza Homayounfar</h1>
-            <p class="title">PhD Researcher in AI and Medical Imaging</p>
-            <p class="affiliations">TU Delft • ErasmusMC</p>
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <div class="hero-title">BioMech-AI with Mory</div>
+        <div class="hero-tagline">Where joints, code, and care intersect.</div>
+        <div class="hero-visual">
+            <img src="image/log.svg" alt="BioMech-AI logo" style="width: 260px; height: 260px; object-fit: contain; background: none; box-shadow: none; border-radius: 0;" />
         </div>
-    </header>
+        <div class="hero-quote typewriter" id="hero-quote">Every joint grows a story. I build models to read it.</div>
+        <button class="cta-btn" onclick="document.getElementById('lab-journal').scrollIntoView({behavior:'smooth'})">Enter Lab Journal</button>
+    </section>
 
-    <nav class="main-nav">
-        <div class="container">
-            <a href="#about" class="nav-item">About</a>
-            <a href="#news" class="nav-item active">News</a>
-            <a href="#research" class="nav-item">Research</a>
-            <a href="#publications" class="nav-item">Publications</a>
-            <a href="#podcast" class="nav-item">ZorgAI Podcast</a>
-            <a href="#contact" class="nav-item">Contact</a>
+    <!-- LAB JOURNAL ENTRIES -->
+    <section class="lab-journal" id="lab-journal">
+        <div class="section-title">Lab Journal — Moments with Mory</div>
+        <section class="moment">
+            <img class="moment-sketch" src="image/sketch-hip.svg" alt="Hip mesh sketch" />
+            <div>
+                <h2>Moment #1: On Growth</h2>
+                <p>In biomechanics, growth is not just change. It's the code of movement unfolding. I model hips not because they break — but because they teach.</p>
+                <div class="moment-quote">“Growth is the poetry of form, written in bone and time.”</div>
+                <a class="moment-link" href="#">Read the full paper</a>
+            </div>
+        </section>
+        <section class="moment">
+            <img class="moment-sketch" src="image/sketch-ai.svg" alt="AI mesh sketch" />
+            <div>
+                <h2>Moment #2: On Uncertainty</h2>
+                <p>Every scan is a question. AI answers, but always with a whisper. My models learn not just from data, but from doubt.</p>
+                <div class="moment-quote">“To model is to listen to the unknown.”</div>
+                <a class="moment-link" href="#">See the code</a>
+            </div>
+        </section>
+        <!-- Add more moments as desired -->
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="projects-section">
+        <div class="section-title">What we’re building</div>
+        <div class="projects-grid">
+            <div class="project-card" onclick="openProjectModal(0)">
+                <div class="project-title">5D Hip Growth Model</div>
+                <div class="project-tech">PyTorch, VTK, CT/MRI</div>
+                <div class="project-purpose">Simulating hip joint growth trajectories for early diagnosis and personalized care.</div>
+            </div>
+            <div class="project-card" onclick="openProjectModal(1)">
+                <div class="project-title">Synthetic CT Dataset Generator</div>
+                <div class="project-tech">GANs, Python</div>
+                <div class="project-purpose">Generating diverse, realistic CT images to train robust AI models.</div>
+            </div>
+            <div class="project-card" onclick="openProjectModal(2)">
+                <div class="project-title">Multi-modal AI Segmenter</div>
+                <div class="project-tech">Attention Maps, CT/MRI</div>
+                <div class="project-purpose">Automated segmentation across imaging modalities for orthopedic research.</div>
+            </div>
         </div>
-    </nav>
-
-    <main class="container">
-        <section id="about" class="section animated-section">
-            <div class="profile-grid">
-                <div class="profile-info">
-                    <h2>About Me</h2>
-                    <p>I am a PhD researcher in a joint program between TU Delft and ErasmusMC, focusing on the development of a 5D growth model to study hip joint growth trajectory using generative and fundamental models. My research interests lie at the intersection of artificial intelligence, medical imaging, and biomedical engineering.</p>
-                    
-                    <h3>Education</h3>
-                    <ul class="education-list">
-                        <li>
-                            <span class="year">Aug 2023 - Present</span>
-                            <span class="degree">PhD in Computer vision for Medical images</span>
-                            <span class="institution">Delft University of Technology & Erasmus Medical Center</span>
-                            <p class="thesis-topic">Thesis: Development of a 5D growth model to study hip joint growth trajectory using generative and fundamental models</p>
-                        </li>
-                        <li>
-                            <span class="year">Sep 2016 - Feb 2019</span>
-                            <span class="degree">Master of Engineering in Biomedical Engineering</span>
-                            <span class="institution">Amirkabir University of Technology</span>
-                            <p class="thesis-topic">Thesis: Diagnosis of lung cancer from CT scan images using deep neural networks</p>
-                        </li>
-                        <li>
-                            <span class="year">Sep 2011 - Jun 2016</span>
-                            <span class="degree">Bachelor of Engineering in Electrical Engineering</span>
-                            <span class="institution">Urmia University of Technology</span>
-                            <p class="thesis-topic">Thesis: Design and implementation of a vending machine controller using FPGA</p>
-                        </li>
-                    </ul>
-                </div>
+        <!-- Project modals (hidden by default) -->
+        <div class="project-modal" id="project-modal">
+            <div class="project-modal-content" id="project-modal-content">
+                <span class='close-modal' onclick='closeProjectModal()'>&times;</span>
+                <!-- Modal content will be injected by JS -->
             </div>
-        </section>
-
-        <section id="news" class="section animated-section">
-            <h2>Latest News</h2>
-            <div class="news-list">
-                <div class="news-item">
-                    <span class="date">August 2023</span>
-                    <p>Started PhD program at TU Delft and ErasmusMC</p>
-                </div>
-                <div class="news-item">
-                    <span class="date">May 2022 - July 2023</span>
-                    <p>Machine Learning Engineer at Snowhill Science</p>
-                </div>
-                <div class="news-item">
-                    <span class="date">April 2021</span>
-                    <p>Awarded Best New Algorithm for AI at The Global Annual Achievement Awards</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="research" class="section animated-section">
-            <h2>Current Research</h2>
-            <div class="research-project">
-                <h3>5D Growth Model for Hip Joint Development</h3>
-                <p>Developing advanced computational models to understand and predict hip joint growth trajectories using a combination of generative models and fundamental biomechanical principles. This research aims to improve early diagnosis and treatment planning for developmental hip disorders.</p>
-            </div>
-        </section>
-
-        <section id="publications" class="section animated-section">
-            <h2>Selected Publications</h2>
-            <div class="publications-list">
-                <div class="publication-item">
-                    <h3>Self-supervised Region-aware Segmentation of COVID-19 CT Images</h3>
-                    <p class="venue">Computers in Biology and Medicine, 149, 106033 (2022)</p>
-                    <div class="publication-links">
-                        <a href="https://www.sciencedirect.com/science/article/pii/S0010482522007521" target="_blank" rel="noopener noreferrer" class="paper-link"><i class="fas fa-file-pdf"></i> PDF</a>
-                    </div>
-                </div>
-
-                <div class="publication-item">
-                    <h3>CovidCTNet: An Open-source Deep Learning Approach to Diagnose COVID-19</h3>
-                    <p class="venue">Nature Partner Journals Digital Medicine (2021)</p>
-                    <div class="publication-links">
-                        <a href="https://www.nature.com/articles/s41746-021-00399-3" target="_blank" rel="noopener noreferrer" class="paper-link"><i class="fas fa-file-pdf"></i> PDF</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="podcast" class="section animated-section">
-            <h2>ZorgAI Podcast: A Roadmap</h2>
-            <p>The <em>ZorgAI</em> podcast is an English-language series focusing on the intersection of artificial intelligence (AI) and healthcare. Hosted by Morteza and AI co-host Zora, the podcast delves into contemporary AI research and its implications for medical applications. Explore the ZorgAI podcast series below. Listen to ZorgAI on <a href="https://podcasters.spotify.com/pod/show/mohomayounfar" target="_blank" rel="noopener noreferrer">Spotify</a> and watch on <a href="https://www.youtube.com/@Zorgai_podcast" target="_blank" rel="noopener noreferrer">YouTube</a>.</p>
-
-            <div class="podcast-category">
-                <h3><i class="fas fa-file-alt"></i> ZorgAI Paper</h3>
-                <p>Deep dives into the research papers and publications. Currently featuring an introduction and discussions on key papers.</p>
-                <div class="episodes-list">
-                    <div class="episode-item">
-                        <h4>Episode 0: Introduction</h4>
-                        <p>In this introductory episode, host Morteza outlines the podcast's objectives, emphasizing a commitment to delivering weekly content on AI advancements in healthcare.</p>
-                        <div class="episode-links-group">
-                             <a href="https://open.spotify.com/episode/0h8WdUWYRkSY0HPAqVt1Kk?si=ppZNM25CRJuUEpkKIdPuyQ" target="_blank" rel="noopener noreferrer" class="episode-link">Listen on Spotify <i class="fab fa-spotify"></i></a>
-                             <a href="https://www.youtube.com/watch?v=uaRVIqlfT4o" target="_blank" rel="noopener noreferrer" class="episode-link">Watch on YouTube <i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                    <div class="episode-item">
-                        <h4>Episode 1/3: Segment Anything: AI That Sees It All?</h4>
-                        <p>This episode provides an in-depth analysis of Meta's "Segment Anything" model, which claims to offer zero-shot image segmentation capabilities. The discussion critically examines the model's performance, potential biases, and applicability in real-world medical scenarios.</p>
-                        <div class="episode-links-group">
-                             <a href="https://open.spotify.com/episode/1XoHF2YLEX0pzrCUt0ycL0?si=gQD-2563SWC33MjmNJHjmQ" target="_blank" rel="noopener noreferrer" class="episode-link">Listen on Spotify <i class="fab fa-spotify"></i></a>
-                             <a href="https://www.youtube.com/watch?v=TJdFykR2zOk" target="_blank" rel="noopener noreferrer" class="episode-link">Watch on YouTube <i class="fab fa-youtube"></i></a>
-                             <a href="https://arxiv.org/abs/2304.02643" target="_blank" rel="noopener noreferrer" class="episode-link">Read Paper (arXiv) <i class="fas fa-file-pdf"></i></a>
-                             <a href="https://segment-anything.com/" target="_blank" rel="noopener noreferrer" class="episode-link">Try Demo <i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                    <div class="episode-item">
-                        <h4>Episode 2/3: Looking Critically at "Segment Anything"</h4>
-                        <p>In Part 2 of the series on Meta's "Segment Anything," the episode delves into the model's limitations, biased evaluations, unfair comparisons, and real-world challenges in medical imaging.</p>
-                        <div class="episode-links-group">
-                             <a href="https://open.spotify.com/episode/4PhTLqLJNyZBcKr3GA9vrP?si=iMFQprNUT2GvjC7FCAgYUA" target="_blank" rel="noopener noreferrer" class="episode-link">Listen on Spotify <i class="fab fa-spotify"></i></a>
-                             <a href="https://youtu.be/LQNtHraLICA?si=M-HxIdf7A8_sAZPo" target="_blank" rel="noopener noreferrer" class="episode-link">Watch on YouTube <i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                    <div class="episode-item">
-                        <h4>Episode 3/3: The Impact and Potential of SAM on Healthcare!</h4>
-                        <p>In the third part of our exploration of the SAM paper, we explore its potential and impact on healthcare. With #ZORA, our AI co-host, we discuss practical applications, challenges, and future research opportunities, especially in medical imaging and clinical workflows. Perfect for clinicians and AI researchers looking to turn models into real-world value.</p>
-                        <div class="episode-links-group">
-                             <a href="https://open.spotify.com/episode/0ZkZgiZhS3TALAUCG17yA3?si=qfZLsqW_QAG0jhi0Xij3zw" target="_blank" rel="noopener noreferrer" class="episode-link">Listen on Spotify <i class="fab fa-spotify"></i></a>
-                             <a href="https://www.youtube.com/watch?v=ZVUPbaqtkIs" target="_blank" rel="noopener noreferrer" class="episode-link">Watch on YouTube <i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="podcast-category">
-                <h3><i class="fas fa-code"></i> ZorgAI Code</h3>
-                <p><strong>Future Plan:</strong> This section will explore the technical implementations, algorithms, and open-source contributions related to ZorgAI. Stay tuned for episodes!</p>
-                <div class="episodes-list">
-                    <!-- Content for ZorgAI Code will be added in the future -->
-                </div>
-            </div>
-
-            <div class="podcast-category">
-                <h3><i class="fas fa-lightbulb"></i> ZorgAI Next</h3>
-                <p><strong>Future Plan:</strong> Future directions, upcoming research, and visionary discussions about the evolution of ZorgAI will be covered here. Episodes coming soon!</p>
-                <div class="episodes-list">
-                    <!-- Content for ZorgAI Next will be added in the future -->
-                </div>
-            </div>
-
-            <div class="podcast-category">
-                <h3><i class="fas fa-microphone-alt"></i> ZorgAI Voice</h3>
-                <p><strong>Future Plan:</strong> This category will feature interviews, expert discussions, and community voices related to ZorgAI and its broader impact. Episodes are planned for the future.</p>
-                <div class="episodes-list">
-                    <!-- Content for ZorgAI Voice will be added in the future -->
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="section animated-section">
-            <h2>Contact</h2>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <p><i class="fas fa-envelope"></i> m.homayounfar@tudelft.nl</p>
-                    <p><i class="fas fa-map-marker-alt"></i> TU Delft, Netherlands</p>
-                </div>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/morteza-homayounfar-mohofar" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/mohofar" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-                    <a href="https://scholar.google.co.uk/citations?user=JLIBa2AAAAAJ&hl=en" target="_blank" rel="noopener noreferrer"><i class="fas fa-graduation-cap"></i></a>
-                    <a href="https://www.youtube.com/@mohofar" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Morteza Homayounfar. All Rights Reserved.</p>
         </div>
-    </footer>
+    </section>
 
-    <script src="scripts.js"></script>
+    <!-- CONVERSATIONS WITH ZORA & ZORGAI PODCAST -->
+    <section class="zora-section">
+        <div class="zora-title">Conversations with ZORA & ZorgAI Podcast</div>
+        <div class="zora-episodes">
+            <div class="zora-episode">
+                <img class="zora-cassette" src="cassette.svg" alt="Cassette" />
+                <div><strong>ZorgAI-Code: A No-Code Experience of Deep learning, Cursor!</strong></div>
+                <div class="zora-quote">“Building and training a deep learning model without writing a single line of code. Guided by AI itself.”</div>
+                <a href="https://creators.spotify.com/pod/profile/mohomayounfar/" target="_blank" style="color:#0077b6;text-decoration:underline;">Listen on Spotify</a>
+            </div>
+            <div class="zora-episode">
+                <img class="zora-cassette" src="cassette.svg" alt="Cassette" />
+                <div><strong>ZorgAI paper (P 3/3): The impact and potential of SAM on healthcare!</strong></div>
+                <div class="zora-quote">“Exploring the SAM paper’s potential and impact on healthcare, with ZORA as AI co-host.”</div>
+                <a href="https://creators.spotify.com/pod/profile/mohomayounfar/" target="_blank" style="color:#0077b6;text-decoration:underline;">Listen on Spotify</a>
+            </div>
+            <div class="zora-episode">
+                <img class="zora-cassette" src="cassette.svg" alt="Cassette" />
+                <div><strong>ZorgAI Paper (P 2/3): Looking Critically at "Segment Anything"</strong></div>
+                <div class="zora-quote">“Digging into the model’s limitations, biased evaluations, and real-world challenges in medical imaging.”</div>
+                <a href="https://creators.spotify.com/pod/profile/mohomayounfar/" target="_blank" style="color:#0077b6;text-decoration:underline;">Listen on Spotify</a>
+            </div>
+            <div class="zora-episode">
+                <img class="zora-cassette" src="cassette.svg" alt="Cassette" />
+                <div><strong>ZorgAI Paper (P 1/3): Segment Anything: AI That Sees It All?</strong></div>
+                <div class="zora-quote">“Meta’s ‘Segment Anything’ model promises zero-shot segmentation at scale—but can it really segment anything?”</div>
+                <a href="https://creators.spotify.com/pod/profile/mohomayounfar/" target="_blank" style="color:#0077b6;text-decoration:underline;">Listen on Spotify</a>
+            </div>
+            <div class="zora-episode">
+                <img class="zora-cassette" src="cassette.svg" alt="Cassette" />
+                <div><strong>ZorgAI, Introduction</strong></div>
+                <div class="zora-quote">“Find out about the podcast plan and weekly AI + healthcare content!”</div>
+                <a href="https://creators.spotify.com/pod/profile/mohomayounfar/" target="_blank" style="color:#0077b6;text-decoration:underline;">Listen on Spotify</a>
+            </div>
+        </div>
+        <div class="zora-chat">
+            <span class="zora-avatar"></span>
+            <span><strong>Ask ZORA:</strong> <span id="zora-insight">“What’s the most surprising thing you’ve learned from hips?”</span></span>
+        </div>
+        <div style="margin-top:1.5em;text-align:center;font-size:1.1em;color:#0077b6;">
+            <a href="https://creators.spotify.com/pod/profile/mohomayounfar/" target="_blank" style="color:#0077b6;text-decoration:underline;">More episodes & show notes on Spotify</a>
+        </div>
+    </section>
+
+    <!-- PUBLICATIONS SECTION -->
+    <section class="publications-section">
+        <div class="section-title" style="text-align:center;">Selected Publications</div>
+        <div class="pub-filter-bar" style="display:flex;gap:1em;justify-content:center;margin-bottom:1.5em;">
+            <button class="pub-filter-btn" onclick="filterPubs('all')">All</button>
+            <button class="pub-filter-btn" onclick="filterPubs('#Segmentation')">#Segmentation</button>
+            <button class="pub-filter-btn" onclick="filterPubs('#Self-supervised')">#Self-supervised</button>
+            <button class="pub-filter-btn" onclick="filterPubs('#MedicalImaging')">#MedicalImaging</button>
+            <button class="pub-filter-btn" onclick="filterPubs('#FederatedLearning')">#FederatedLearning</button>
+            <button class="pub-filter-btn" onclick="filterPubs('#fMRI')">#fMRI</button>
+            <button class="pub-filter-btn" onclick="filterPubs('#AffectiveComputing')">#AffectiveComputing</button>
+        </div>
+        <div class="publications-grid" id="publications-grid">
+            <div class="publication-card" data-tags="#Segmentation #Self-supervised #COVID19CT">
+                <div class="pub-journal">Computers in Biology and Medicine, 2022</div>
+                <div class="pub-title">Self‑supervised region‑aware segmentation of COVID‑19 CT images using 3D GAN and contrastive learning</div>
+                <div class="pub-tags">#Segmentation #Self-supervised #COVID‑19 CT</div>
+                <div class="pub-abstract">Introduces a method combining 3D GANs with contrastive learning for self‑supervised, region‑aware segmentation of COVID‑19 lesions in CT scans. <span class="pub-pdf"><a href="https://doi.org/10.1016/j.compbiomed.2022.105538" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></span></div>
+                <div class="pub-annotation" style="opacity:1;position:static;margin-top:0.7em;">Read this if you’re curious about self-supervised segmentation in pandemic imaging.</div>
+            </div>
+            <div class="publication-card" data-tags="#Diagnosis #CT-classification #Covid19">
+                <div class="pub-journal">npj Digital Medicine, 2021</div>
+                <div class="pub-title">CovidCTNet: an open‑source deep Learning Approach to Diagnose Covid‑19 Using Small Cohort of CT Images</div>
+                <div class="pub-tags">#Diagnosis #CT‑classification #Covid19</div>
+                <div class="pub-abstract">Proposes an anomaly-detection network trained on synthetic CT slices to identify and classify COVID‑19 from other pneumonia types, tailored for limited data scenarios. <span class="pub-pdf"><a href="https://www.nature.com/articles/s41746-021-00461-6" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></span></div>
+                <div class="pub-annotation" style="opacity:1;position:static;margin-top:0.7em;">A must-read for open-source AI in healthcare and pandemic response.</div>
+            </div>
+            <div class="publication-card" data-tags="#Time-series #IoT #BatteryAnalytics">
+                <div class="pub-journal">Sensors, 2020</div>
+                <div class="pub-title">Understanding Smartwatch Battery Utilization in the Wild</div>
+                <div class="pub-tags">#Time‑series #IoT #BatteryAnalytics</div>
+                <div class="pub-abstract">Analyzes real-world battery usage patterns from 832 users, using clustering and a transparent convolutional neural network to distinguish high vs. low consumption events. <span class="pub-pdf"><a href="https://www.mdpi.com/1424-8220/20/9/2591" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></span></div>
+                <div class="pub-annotation" style="opacity:1;position:static;margin-top:0.7em;">For those interested in wearable analytics and real-world data.</div>
+            </div>
+            <div class="publication-card" data-tags="#FederatedLearning #Compression #CommunicationEfficiency">
+                <div class="pub-journal">arXiv preprint, 2021</div>
+                <div class="pub-title">FEDZIP: A Compression Framework for Communication‑Efficient Federated Learning</div>
+                <div class="pub-tags">#FederatedLearning #Compression #CommunicationEfficiency</div>
+                <div class="pub-abstract">Introduces FedZip, a federated-learning compression method using Top-z sparsification, clustering-based quantization, and encoding to reduce communication by up to 1000× while preserving accuracy. <span class="pub-pdf"><a href="https://arxiv.org/abs/2102.08599" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></span></div>
+                <div class="pub-annotation" style="opacity:1;position:static;margin-top:0.7em;">Read this if you care about scalable, efficient AI.</div>
+            </div>
+            <div class="publication-card" data-tags="#Pruning #ModelCompression #MedicalImaging">
+                <div class="pub-journal">arXiv / CoRR, 2023</div>
+                <div class="pub-title">Beta‑Rank: A Robust Convolutional Filter Pruning Method For Imbalanced Medical Image Analysis</div>
+                <div class="pub-tags">#Pruning #ModelCompression #MedicalImaging</div>
+                <div class="pub-abstract">Presents “Beta‑Rank,” a pruning technique designed to improve convolutional neural networks’ performance on imbalanced medical imaging datasets. <span class="pub-pdf"><a href="https://arxiv.org/abs/2301.07013" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></span></div>
+                <div class="pub-annotation" style="opacity:1;position:static;margin-top:0.7em;">Curious about model compression for real-world medical data? Start here.</div>
+            </div>
+            <div class="publication-card" data-tags="#AffectiveComputing #Competition #PhysiologicalSignals">
+                <div class="pub-journal">27th IEEE ICEE (Iran), 2019</div>
+                <div class="pub-title">Mental Arousal Level Recognition Competition on the Shared Database</div>
+                <div class="pub-tags">#AffectiveComputing #Competition #PhysiologicalSignals</div>
+                <div class="pub-abstract">Details a competition on recognizing mental arousal levels using shared physiological datasets (GSR, PPG, respiration, etc.).</div>
+                <div class="pub-annotation" style="opacity:1;position:static;margin-top:0.7em;">For those interested in affective computing and physiological signal analysis.</div>
+            </div>
+            <div class="publication-card" data-tags="#fMRI #MotionEstimation #TransferLearning">
+                <div class="pub-journal">ISMRM 2023 Conference</div>
+                <div class="pub-title">K‑space Based Motion Estimation for Polar fMRI Using Transfer Learning</div>
+                <div class="pub-tags">#fMRI #MotionEstimation #TransferLearning</div>
+                <div class="pub-abstract">Proposes a transfer learning method for estimating motion directly from k-space data in polar fMRI scans, improving motion correction techniques.</div>
+                <div class="pub-annotation" style="opacity:1;position:static;margin-top:0.7em;">A technical leap for fMRI motion correction.</div>
+            </div>
+            <div class="publication-card" data-tags="#MedicalImaging #Segmentation #SelfSupervisedLearning #PediatricAnalysis #BoneXRay">
+                <div class="pub-journal">Preprint, January 2024</div>
+                <div class="pub-title">PedVision: A Manual-Annotation-Free and Age Scalable Segmentation Pipeline for Bone Analysis in Hand X-Ray Images</div>
+                <div class="pub-tags">#MedicalImaging #Segmentation #SelfSupervisedLearning #PediatricAnalysis #BoneXRay</div>
+                <div class="pub-abstract">PedVision is a segmentation pipeline designed to analyze hand X-ray images without the need for manual annotations. It is scalable across different age groups, making it suitable for pediatric bone analysis. The method utilizes self-supervised learning techniques to achieve high accuracy while minimizing the dependency on labeled data. <span class="pub-pdf"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5050535" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></span></div>
+                <div class="pub-annotation" style="opacity:1;position:static;margin-top:0.7em;">A new era for pediatric bone imaging—no manual annotation required.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section">
+        <div class="section-title">Leave a note for the lab</div>
+        <form class="contact-form" id="contact-form">
+            <div class="form-row">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-row">
+                <label for="affiliation">Affiliation (if any)</label>
+                <input type="text" id="affiliation" name="affiliation">
+            </div>
+            <div class="form-row">
+                <label for="interest">What sparked your interest?</label>
+                <textarea id="interest" name="interest" required></textarea>
+            </div>
+            <button type="submit" class="btn-clinical">Submit</button>
+        </form>
+        <div class="lab-badge" tabindex="0">
+            <span>Lab Access Badge</span>
+        </div>
+        <div class="collab-message">Collaborators, interns, and curious minds welcome.</div>
+    </section>
+
+    <script>
+    // Typewriter effect for hero quote
+    const quote = "Every joint grows a story. I build models to read it.";
+    let i = 0;
+    function typeWriter() {
+        if (i < quote.length) {
+            document.getElementById("hero-quote").innerHTML = quote.substring(0, i+1) + '<span class="typewriter"></span>';
+            i++;
+            setTimeout(typeWriter, 40);
+        } else {
+            document.getElementById("hero-quote").innerHTML = quote;
+        }
+    }
+    window.onload = typeWriter;
+
+    // Project modal logic
+    const projectData = [
+        {
+            title: "5D Hip Growth Model",
+            content: `<h2>5D Hip Growth Model</h2><p>Simulates hip joint growth using generative models and biomechanical simulation. Used for early diagnosis and personalized treatment planning.</p><ul><li>Tech: PyTorch, VTK, CT/MRI</li><li>Purpose: Predict growth trajectories, identify risk factors</li></ul>`
+        },
+        {
+            title: "Synthetic CT Dataset Generator",
+            content: `<h2>Synthetic CT Dataset Generator</h2><p>Generates diverse, realistic CT images using GANs to augment training data for AI models.</p><ul><li>Tech: GANs, Python</li><li>Purpose: Improve AI robustness, simulate rare pathologies</li></ul>`
+        },
+        {
+            title: "Multi-modal AI Segmenter",
+            content: `<h2>Multi-modal AI Segmenter</h2><p>Automated segmentation across CT and MRI using attention-based deep learning.</p><ul><li>Tech: Attention Maps, CT/MRI</li><li>Purpose: Consistent, accurate segmentation for research and clinical use</li></ul>`
+        }
+    ];
+    function openProjectModal(idx) {
+        document.getElementById('project-modal-content').innerHTML = `<span class='close-modal' onclick='closeProjectModal()'>&times;</span>` + projectData[idx].content;
+        document.getElementById('project-modal').style.display = 'flex';
+    }
+    function closeProjectModal() {
+        document.getElementById('project-modal').style.display = 'none';
+    }
+    // ZORA chat bubble: rotate insights
+    const zoraInsights = [
+        "What’s the most surprising thing you’ve learned from hips?",
+        "How does AI see a joint differently than a surgeon?",
+        "What’s the poetry in a CT scan?",
+        "If you could ask a bone a question, what would it be?"
+    ];
+    let zoraIdx = 0;
+    setInterval(() => {
+        zoraIdx = (zoraIdx + 1) % zoraInsights.length;
+        document.getElementById('zora-insight').textContent = zoraInsights[zoraIdx];
+    }, 6000);
+    // Contact form animation (placeholder)
+    document.getElementById('contact-form').onsubmit = function(e) {
+        e.preventDefault();
+        this.reset();
+        this.innerHTML = '<div style="text-align:center;padding:2em 0;">Your note has been sealed in the lab journal! <span style="font-size:2em;">📁</span></div>';
+        setTimeout(() => { location.reload(); }, 3000);
+    };
+    // Publication filter logic
+    function filterPubs(tag) {
+        const cards = document.querySelectorAll('.publication-card');
+        cards.forEach(card => {
+            if (tag === 'all' || card.dataset.tags.includes(tag)) {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+    </script>
 </body>
 </html>
