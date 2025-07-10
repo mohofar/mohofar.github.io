@@ -70,6 +70,50 @@
     </style>
 </head>
 <body>
+    <!-- TABLE OF CONTENTS -->
+    <nav class="toc-nav">
+        <ul class="toc-list">
+            <li><a href="#lab-journal">Lab Journal</a></li>
+            <li><a href="#projects-section">Projects</a></li>
+            <li><a href="#zora-section">Conversations & Podcast</a></li>
+            <li><a href="#publications-section">Publications</a></li>
+            <li><a href="#contact-section">Contact</a></li>
+        </ul>
+    </nav>
+
+    <style>
+    .toc-nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: #fff;
+        box-shadow: 0 2px 8px #0001;
+        padding: 0.5em 0;
+        margin-bottom: 2em;
+    }
+    .toc-list {
+        display: flex;
+        justify-content: center;
+        gap: 2.5em;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .toc-list li a {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.1em;
+        color: #0077b6;
+        text-decoration: none;
+        padding: 0.3em 0.7em;
+        border-radius: 8px;
+        transition: background 0.2s, color 0.2s;
+    }
+    .toc-list li a:hover, .toc-list li a:focus {
+        background: #e0f4ff;
+        color: #222;
+    }
+    </style>
+
     <!-- HERO SECTION -->
     <section class="hero-section">
         <div class="hero-title">BioMech-AI with Mory</div>
@@ -85,7 +129,7 @@
     <section class="lab-journal" id="lab-journal">
         <div class="section-title">Lab Journal — Moments with Mory</div>
         <section class="moment">
-            <img class="moment-sketch" src="image/sketch-hip.svg" alt="Hip mesh sketch" />
+            <img class="moment-sketch" src="image/growth.jpg" alt="Growth visual" />
             <div>
                 <h2>Moment #1: On Growth</h2>
                 <p>In biomechanics, growth is not just change. It's the code of movement unfolding. I model hips not because they break — but because they teach.</p>
@@ -94,7 +138,7 @@
             </div>
         </section>
         <section class="moment">
-            <img class="moment-sketch" src="image/sketch-ai.svg" alt="AI mesh sketch" />
+            <img class="moment-sketch" src="image/uncertenty.jpg" alt="Uncertainty visual" />
             <div>
                 <h2>Moment #2: On Uncertainty</h2>
                 <p>Every scan is a question. AI answers, but always with a whisper. My models learn not just from data, but from doubt.</p>
@@ -106,7 +150,7 @@
     </section>
 
     <!-- PROJECTS SECTION -->
-    <section class="projects-section">
+    <section class="projects-section" id="projects-section">
         <div class="section-title">What we’re building</div>
         <div class="projects-grid">
             <div class="project-card" onclick="openProjectModal(0)">
@@ -135,7 +179,7 @@
     </section>
 
     <!-- CONVERSATIONS WITH ZORA & ZORGAI PODCAST -->
-    <section class="zora-section">
+    <section class="zora-section" id="zora-section">
         <div class="zora-title">Conversations with ZORA & ZorgAI Podcast</div>
         <div class="zora-episodes">
             <div class="zora-episode">
@@ -179,7 +223,7 @@
     </section>
 
     <!-- PUBLICATIONS SECTION -->
-    <section class="publications-section">
+    <section class="publications-section" id="publications-section">
         <div class="section-title" style="text-align:center;">Selected Publications</div>
         <div class="pub-filter-bar" style="display:flex;gap:1em;justify-content:center;margin-bottom:1.5em;">
             <button class="pub-filter-btn" onclick="filterPubs('all')">All</button>
@@ -251,7 +295,7 @@
     </section>
 
     <!-- CONTACT SECTION -->
-    <section class="contact-section">
+    <section class="contact-section" id="contact-section">
         <div class="section-title">Leave a note for the lab</div>
         <form class="contact-form" id="contact-form">
             <div class="form-row">
@@ -273,6 +317,50 @@
         </div>
         <div class="collab-message">Collaborators, interns, and curious minds welcome.</div>
     </section>
+
+    <!-- FLOATING CONTACT INFO -->
+    <div class="floating-contact">
+        <a href="https://scholar.google.co.uk/citations?user=JLIBa2AAAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+        <a href="https://www.linkedin.com/in/morteza-homayounfar-mohofar" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/mohofar" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    </div>
+
+    <style>
+    .floating-contact {
+        position: fixed;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        background: #fff;
+        border-radius: 16px 0 0 16px;
+        box-shadow: 0 2px 12px #0077b62a;
+        padding: 0.7em 0.5em 0.7em 0.7em;
+        display: flex;
+        flex-direction: column;
+        gap: 1.1em;
+        z-index: 2000;
+        align-items: center;
+    }
+    .floating-contact a {
+        color: #0077b6;
+        font-size: 1.7em;
+        transition: color 0.2s, transform 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+    }
+    .floating-contact a:hover {
+        color: #b08968;
+        transform: scale(1.18);
+    }
+    .floating-contact i {
+        pointer-events: none;
+    }
+    @media (max-width: 700px) {
+        .floating-contact { right: 0; top: auto; bottom: 0; left: 0; flex-direction: row; border-radius: 0; box-shadow: 0 -2px 12px #0077b62a; justify-content: center; padding: 0.5em 0; }
+    }
+    </style>
 
     <script>
     // Typewriter effect for hero quote
