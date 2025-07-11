@@ -39,7 +39,12 @@
         .zora-title { font-family: 'Playfair Display', serif; font-size: 2rem; color: #222; margin-bottom: 1em; }
         .zora-episodes { display: flex; gap: 1.5em; flex-wrap: wrap; justify-content: center; }
         .zora-episode { background: #fff; border-radius: 12px; box-shadow: 0 2px 8px #0001; padding: 1em 1.5em; width: 220px; margin: 1em 0; position: relative; }
-        .zora-cassette { position: absolute; top: -1.5em; left: 1em; width: 48px; }
+        .zora-cassette {
+            display: block;
+            margin: 0 auto 1.2em auto;
+            width: 48px;
+            position: static;
+        }
         .zora-quote { font-style: italic; color: #0077b6; margin-top: 0.5em; }
         .zora-avatar { width: 40px; height: 40px; border-radius: 50%; background: #0077b6; display: inline-block; margin-right: 0.5em; vertical-align: middle; }
         .zora-chat { background: #fff; border-radius: 24px; box-shadow: 0 2px 8px #0077b62a; padding: 1em 2em; margin-top: 1.5em; display: flex; align-items: center; gap: 1em; }
@@ -181,36 +186,54 @@
     <!-- CONVERSATIONS WITH ZORA & ZORGAI PODCAST -->
     <section class="zora-section" id="zora-section">
         <div class="zora-title">Conversations with ZORA & ZorgAI Podcast</div>
+        <div class="podcast-filter-bar" style="display:flex;gap:1em;justify-content:center;margin-bottom:1.5em;">
+            <button class="podcast-filter-btn" onclick="filterPodcasts('all')">All</button>
+            <button class="podcast-filter-btn" onclick="filterPodcasts('#ZorgAI-Introduction')">#ZorgAI-Introduction</button>
+            <button class="podcast-filter-btn" onclick="filterPodcasts('#ZorgAI-Paper')">#ZorgAI-Paper</button>
+            <button class="podcast-filter-btn" onclick="filterPodcasts('#ZorgAI-Code')">#ZorgAI-Code</button>
+            <button class="podcast-filter-btn" onclick="filterPodcasts('#ZorgAI-Voice')">#ZorgAI-Voice</button>
+            <button class="podcast-filter-btn" onclick="filterPodcasts('#ZorgAI-Next')">#ZorgAI-Next</button>
+        </div>
         <div class="zora-episodes">
-            <div class="zora-episode">
-                <img class="zora-cassette" src="cassette.svg" alt="Cassette" />
-                <div><strong>ZorgAI-Code: A No-Code Experience of Deep learning, Cursor!</strong></div>
-                <div class="zora-quote">“Building and training a deep learning model without writing a single line of code. Guided by AI itself.”</div>
+            <div class="zora-episode" data-tags="#ZorgAI-Introduction">
+                <img class="zora-cassette" src="image/zorgai.jpeg" alt="ZorgAI Podcast" />
+                <div><strong>ZorgAI, Introduction</strong></div>
+                <div class="zora-quote">“Find out about the podcast plan and weekly AI + healthcare content!”</div>
                 <a href="https://creators.spotify.com/pod/profile/mohomayounfar/" target="_blank" style="color:#0077b6;text-decoration:underline;">Listen on Spotify</a>
             </div>
-            <div class="zora-episode">
-                <img class="zora-cassette" src="cassette.svg" alt="Cassette" />
-                <div><strong>ZorgAI paper (P 3/3): The impact and potential of SAM on healthcare!</strong></div>
-                <div class="zora-quote">“Exploring the SAM paper’s potential and impact on healthcare, with ZORA as AI co-host.”</div>
-                <a href="https://creators.spotify.com/pod/profile/mohomayounfar/" target="_blank" style="color:#0077b6;text-decoration:underline;">Listen on Spotify</a>
-            </div>
-            <div class="zora-episode">
-                <img class="zora-cassette" src="cassette.svg" alt="Cassette" />
-                <div><strong>ZorgAI Paper (P 2/3): Looking Critically at "Segment Anything"</strong></div>
-                <div class="zora-quote">“Digging into the model’s limitations, biased evaluations, and real-world challenges in medical imaging.”</div>
-                <a href="https://creators.spotify.com/pod/profile/mohomayounfar/" target="_blank" style="color:#0077b6;text-decoration:underline;">Listen on Spotify</a>
-            </div>
-            <div class="zora-episode">
-                <img class="zora-cassette" src="cassette.svg" alt="Cassette" />
+            <div class="zora-episode" data-tags="#ZorgAI-Paper">
+                <img class="zora-cassette" src="image/zorgai.jpeg" alt="ZorgAI Podcast" />
                 <div><strong>ZorgAI Paper (P 1/3): Segment Anything: AI That Sees It All?</strong></div>
                 <div class="zora-quote">“Meta’s ‘Segment Anything’ model promises zero-shot segmentation at scale—but can it really segment anything?”</div>
                 <a href="https://creators.spotify.com/pod/profile/mohomayounfar/" target="_blank" style="color:#0077b6;text-decoration:underline;">Listen on Spotify</a>
             </div>
-            <div class="zora-episode">
-                <img class="zora-cassette" src="cassette.svg" alt="Cassette" />
-                <div><strong>ZorgAI, Introduction</strong></div>
-                <div class="zora-quote">“Find out about the podcast plan and weekly AI + healthcare content!”</div>
+            <div class="zora-episode" data-tags="#ZorgAI-Paper">
+                <img class="zora-cassette" src="image/zorgai.jpeg" alt="ZorgAI Podcast" />
+                <div><strong>ZorgAI Paper (P 2/3): Looking Critically at \"Segment Anything\"</strong></div>
+                <div class="zora-quote">“Digging into the model’s limitations, biased evaluations, and real-world challenges in medical imaging.”</div>
                 <a href="https://creators.spotify.com/pod/profile/mohomayounfar/" target="_blank" style="color:#0077b6;text-decoration:underline;">Listen on Spotify</a>
+            </div>
+            <div class="zora-episode" data-tags="#ZorgAI-Paper">
+                <img class="zora-cassette" src="image/zorgai.jpeg" alt="ZorgAI Podcast" />
+                <div><strong>ZorgAI paper (P 3/3): The impact and potential of SAM on healthcare!</strong></div>
+                <div class="zora-quote">“Exploring the SAM paper’s potential and impact on healthcare, with ZORA as AI co-host.”</div>
+                <a href="https://creators.spotify.com/pod/profile/mohomayounfar/" target="_blank" style="color:#0077b6;text-decoration:underline;">Listen on Spotify</a>
+            </div>
+            <div class="zora-episode" data-tags="#ZorgAI-Code">
+                <img class="zora-cassette" src="image/zorgai.jpeg" alt="ZorgAI Podcast" />
+                <div><strong>ZorgAI-Code: A No-Code Experience of Deep learning, Cursor!</strong></div>
+                <div class="zora-quote">“Building and training a deep learning model without writing a single line of code. Guided by AI itself.”</div>
+                <a href="https://creators.spotify.com/pod/profile/mohomayounfar/" target="_blank" style="color:#0077b6;text-decoration:underline;">Listen on Spotify</a>
+            </div>
+            <div class="zora-episode" data-tags="#ZorgAI-Voice">
+                <img class="zora-cassette" src="image/zorgai.jpeg" alt="ZorgAI Podcast" />
+                <div><strong>ZorgAI-Voice: Coming soon</strong></div>
+                <div class="zora-quote">“Stay tuned for future episodes on AI voice in healthcare.”</div>
+            </div>
+            <div class="zora-episode" data-tags="#ZorgAI-Next">
+                <img class="zora-cassette" src="image/zorgai.jpeg" alt="ZorgAI Podcast" />
+                <div><strong>ZorgAI-Next: Coming soon</strong></div>
+                <div class="zora-quote">“Next-gen AI and healthcare topics are on the way.”</div>
             </div>
         </div>
         <div class="zora-chat">
@@ -297,7 +320,7 @@
     <!-- CONTACT SECTION -->
     <section class="contact-section" id="contact-section">
         <div class="section-title">Leave a note for the lab</div>
-        <form class="contact-form" id="contact-form">
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/yourid" method="POST">
             <div class="form-row">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required>
@@ -310,6 +333,8 @@
                 <label for="interest">What sparked your interest?</label>
                 <textarea id="interest" name="interest" required></textarea>
             </div>
+            <!-- Optional: Redirect to a thank you page or show a message -->
+            <input type="hidden" name="_redirect" value="https://mohofar.github.io/?thanks" />
             <button type="submit" class="btn-clinical">Submit</button>
         </form>
         <div class="lab-badge" tabindex="0">
@@ -360,6 +385,9 @@
     @media (max-width: 700px) {
         .floating-contact { right: 0; top: auto; bottom: 0; left: 0; flex-direction: row; border-radius: 0; box-shadow: 0 -2px 12px #0077b62a; justify-content: center; padding: 0.5em 0; }
     }
+    .podcast-filter-bar { display:flex;gap:1em;justify-content:center;margin-bottom:1.5em; }
+    .podcast-filter-btn { background: #0077b6; color: #fff; border: none; border-radius: 24px; padding: 0.6em 1.5em; font-size: 0.9rem; cursor: pointer; transition: background 0.2s; }
+    .podcast-filter-btn:hover { background: #005f8a; }
     </style>
 
     <script>
@@ -412,15 +440,20 @@
         document.getElementById('zora-insight').textContent = zoraInsights[zoraIdx];
     }, 6000);
     // Contact form animation (placeholder)
-    document.getElementById('contact-form').onsubmit = function(e) {
-        e.preventDefault();
-        this.reset();
-        this.innerHTML = '<div style="text-align:center;padding:2em 0;">Your note has been sealed in the lab journal! <span style="font-size:2em;">📁</span></div>';
-        setTimeout(() => { location.reload(); }, 3000);
-    };
+    // Removed JS that prevented form submission for Formspree integration
     // Publication filter logic
     function filterPubs(tag) {
         const cards = document.querySelectorAll('.publication-card');
+        cards.forEach(card => {
+            if (tag === 'all' || card.dataset.tags.includes(tag)) {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+    function filterPodcasts(tag) {
+        const cards = document.querySelectorAll('.zora-episode');
         cards.forEach(card => {
             if (tag === 'all' || card.dataset.tags.includes(tag)) {
                 card.style.display = '';
