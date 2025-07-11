@@ -72,6 +72,85 @@
             .projects-grid, .publications-grid, .zora-episodes { flex-direction: column; align-items: center; }
             .hero-visual { width: 95vw; height: 160px; }
         }
+        .lab-key {
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.7em;
+            transition: box-shadow 0.3s, background 0.3s, color 0.3s, transform 0.3s;
+            outline: none;
+            border: none;
+            font-size: 1.1em;
+            user-select: none;
+            position: relative;
+        }
+        .lab-key:active, .lab-key:focus {
+            box-shadow: 0 0 16px #ffd700, 0 2px 8px #0001;
+            background: #fffde4;
+        }
+        .key-icon {
+            font-size: 1.5em;
+            transition: filter 0.3s, text-shadow 0.3s, transform 0.5s cubic-bezier(.68,-0.55,.27,1.55);
+        }
+        .lab-key.night {
+            background: #fffde4;
+            color: #b08968;
+            box-shadow: 0 0 24px #ffd700, 0 2px 8px #0001;
+        }
+        .lab-key.night .key-icon {
+            filter: drop-shadow(0 0 8px #ffd700);
+            text-shadow: 0 0 8px #ffd700, 0 0 2px #fff;
+            transform: rotate(-20deg) scale(1.15);
+        }
+        body.night-mode {
+            background: #1a2233 !important;
+            color: #e0e6f0 !important;
+            transition: background 0.5s, color 0.5s;
+        }
+        body.night-mode .hero-section,
+        body.night-mode .projects-section,
+        body.night-mode .zora-section,
+        body.night-mode .publications-section,
+        body.night-mode .contact-section,
+        body.night-mode nav.toc-nav,
+        body.night-mode .project-modal-content,
+        body.night-mode .project-card,
+        body.night-mode .moment,
+        body.night-mode .zora-episode,
+        body.night-mode .publication-card,
+        body.night-mode .contact-form {
+            background: #232b3a !important;
+            color: #e0e6f0 !important;
+            box-shadow: 0 2px 12px #0006;
+        }
+        body.night-mode .cta-btn,
+        body.night-mode .btn-clinical,
+        body.night-mode .pub-filter-btn,
+        body.night-mode .podcast-filter-btn {
+            background: #3a5a8a !important;
+            color: #fff !important;
+        }
+        body.night-mode .cta-btn:hover,
+        body.night-mode .btn-clinical:hover,
+        body.night-mode .pub-filter-btn:hover,
+        body.night-mode .podcast-filter-btn:hover {
+            background: #274060 !important;
+        }
+        body.night-mode .floating-contact {
+            background: #232b3a !important;
+            box-shadow: 0 2px 12px #000a;
+        }
+        body.night-mode .lab-key {
+            background: #fffde4 !important;
+            color: #b08968 !important;
+            box-shadow: 0 0 24px #ffd700, 0 2px 8px #0001;
+        }
+        body.night-mode .lab-key .key-icon {
+            filter: drop-shadow(0 0 8px #ffd700);
+            text-shadow: 0 0 8px #ffd700, 0 0 2px #fff;
+            transform: rotate(-20deg) scale(1.15);
+        }
     </style>
 </head>
 <body>
@@ -326,8 +405,8 @@
                 <input type="text" id="name" name="name" required>
             </div>
             <div class="form-row">
-                <label for="affiliation">Affiliation (if any)</label>
-                <input type="text" id="affiliation" name="affiliation">
+                <label for="email">Email (for reply)</label>
+                <input type="email" id="email" name="email" required>
             </div>
             <div class="form-row">
                 <label for="interest">What sparked your interest?</label>
@@ -337,9 +416,11 @@
             <input type="hidden" name="_redirect" value="https://mohofar.github.io/?thanks" />
             <button type="submit" class="btn-clinical">Submit</button>
         </form>
-        <div class="lab-badge" tabindex="0">
-            <span>Lab Access Badge</span>
+        <!-- Lab Access Key Button -->
+        <div class="lab-badge lab-key" id="lab-key" tabindex="0" title="Show Publication Reminder" onclick="showPublicationReminder()">
+            <span class="key-icon">🔑</span> <span class="key-label">Lab Access Key</span>
         </div>
+        <div id="pub-reminder-overlay" style="display:none;"></div>
         <div class="collab-message">Collaborators, interns, and curious minds welcome.</div>
     </section>
 
@@ -388,6 +469,29 @@
     .podcast-filter-bar { display:flex;gap:1em;justify-content:center;margin-bottom:1.5em; }
     .podcast-filter-btn { background: #0077b6; color: #fff; border: none; border-radius: 24px; padding: 0.6em 1.5em; font-size: 0.9rem; cursor: pointer; transition: background 0.2s; }
     .podcast-filter-btn:hover { background: #005f8a; }
+    #pub-reminder-overlay {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        width: 100vw;
+        z-index: 3000;
+        background: rgba(30, 40, 80, 0.92);
+        color: #ffd700;
+        font-family: 'Playfair Display', serif;
+        font-size: 2.1em;
+        text-align: center;
+        padding: 1.2em 0.5em 1em 0.5em;
+        box-shadow: 0 4px 32px #ffd70099, 0 2px 8px #0008;
+        text-shadow: 0 0 16px #ffd700, 0 0 2px #fff;
+        letter-spacing: 0.04em;
+        animation: pub-glow 0.7s alternate infinite;
+        border-bottom-left-radius: 24px;
+        border-bottom-right-radius: 24px;
+    }
+    @keyframes pub-glow {
+        from { box-shadow: 0 4px 32px #ffd70099, 0 2px 8px #0008; }
+        to { box-shadow: 0 8px 48px #fffbe9, 0 2px 8px #ffd700; }
+    }
     </style>
 
     <script>
@@ -462,6 +566,23 @@
             }
         });
     }
+    function showPublicationReminder() {
+        // Scroll to publications section
+        const pubSection = document.getElementById('publications-section');
+        if (pubSection) pubSection.scrollIntoView({behavior: 'smooth'});
+        // Show overlay message
+        const overlay = document.getElementById('pub-reminder-overlay');
+        overlay.textContent = '🔑 Access granted: Publications first, then let’s connect!';
+        overlay.style.display = 'block';
+        setTimeout(() => { overlay.style.display = 'none'; }, 5000);
+    }
+    // On load, restore night mode if set
+    window.addEventListener('DOMContentLoaded', function() {
+        if (localStorage.getItem('nightMode') === '1') {
+            document.body.classList.add('night-mode');
+            document.getElementById('lab-key').classList.add('night');
+        }
+    });
     </script>
 </body>
 </html>
