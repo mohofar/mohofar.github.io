@@ -34,7 +34,7 @@
         .project-purpose { font-size: 1em; color: #444; }
         .project-modal { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #0008; align-items: center; justify-content: center; z-index: 1000; }
         .project-modal-content { background: #fff; border-radius: 16px; padding: 2em; max-width: 500px; }
-        .close-modal { position: absolute; top: 1em; right: 1em; font-size: 1.5em; color: #0077b6; cursor: pointer; }
+        .close-modal { position: absolute; top: 1em; right: 1em; font-size: 1.5em; color: #0077b6; cursor: pointer; z-index: 10; }
         .zora-section { background: #f8f7f3; padding: 2em 0; display: flex; flex-direction: column; align-items: center; }
         .zora-title { font-family: 'Playfair Display', serif; font-size: 2rem; color: #222; margin-bottom: 1em; }
         .zora-episodes { display: flex; gap: 1.5em; flex-wrap: wrap; justify-content: center; }
@@ -255,9 +255,9 @@
         </div>
         <!-- Project modals (hidden by default) -->
         <div class="project-modal" id="project-modal">
-            <div class="project-modal-content" id="project-modal-content">
+            <div class="project-modal-content" id="project-modal-content" style="position: relative;">
                 <span class='close-modal' onclick='closeProjectModal()'>&times;</span>
-                <!-- Modal content will be injected by JS -->
+                <div id="project-modal-body"></div>
             </div>
         </div>
     </section>
@@ -492,6 +492,15 @@
         from { box-shadow: 0 4px 32px #ffd70099, 0 2px 8px #0008; }
         to { box-shadow: 0 8px 48px #fffbe9, 0 2px 8px #ffd700; }
     }
+    .close-modal {
+        position: absolute;
+        top: 1em;
+        right: 1em;
+        font-size: 1.5em;
+        color: #0077b6;
+        cursor: pointer;
+        z-index: 10;
+    }
     </style>
 
     <script>
@@ -525,10 +534,7 @@
         }
     ];
     function openProjectModal(idx) {
-        // Only inject the project content, not the close button
-        document.getElementById('project-modal-content').innerHTML =
-            "<span class='close-modal' onclick='closeProjectModal()'>&times;</span>" +
-            projectData[idx].content;
+        document.getElementById('project-modal-body').innerHTML = projectData[idx].content;
         document.getElementById('project-modal').style.display = 'flex';
     }
     function closeProjectModal() {
@@ -584,6 +590,12 @@
         if (localStorage.getItem('nightMode') === '1') {
             document.body.classList.add('night-mode');
             document.getElementById('lab-key').classList.add('night');
+        }
+    });
+    // Optional: Close modal on Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === "Escape") {
+            closeProjectModal();
         }
     });
     </script>
