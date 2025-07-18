@@ -341,35 +341,35 @@
                 <div class="pub-journal">Computers in Biology and Medicine, 2022</div>
                 <div class="pub-title">Self‑supervised region‑aware segmentation of COVID‑19 CT images using 3D GAN and contrastive learning</div>
                 <div class="pub-tags">#Segmentation #Self-supervised #COVID‑19 CT</div>
-                <div class="pub-abstract">Introduces a method combining 3D GANs with contrastive learning for self‑supervised, region‑aware segmentation of COVID‑19 lesions in CT scans. <span class="pub-pdf"><a href="https://doi.org/10.1016/j.compbiomed.2022.105538" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></span></div>
+                <div class="pub-abstract">Introduces a method combining 3D GANs with contrastive learning for self‑supervised, region‑aware segmentation of COVID‑19 lesions in CT scans. <span class="pub-pdf"><a href="https://www.sciencedirect.com/science/article/pii/S0010482522007521" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></span></div>
                 <div class="pub-annotation" style="opacity:1;position:static;margin-top:0.7em;">Read this if you’re curious about self-supervised segmentation in pandemic imaging.</div>
             </div>
             <div class="publication-card" data-tags="#Diagnosis #CT-classification #Covid19">
                 <div class="pub-journal">npj Digital Medicine, 2021</div>
                 <div class="pub-title">CovidCTNet: an open‑source deep Learning Approach to Diagnose Covid‑19 Using Small Cohort of CT Images</div>
                 <div class="pub-tags">#Diagnosis #CT‑classification #Covid19</div>
-                <div class="pub-abstract">Proposes an anomaly-detection network trained on synthetic CT slices to identify and classify COVID‑19 from other pneumonia types, tailored for limited data scenarios. <span class="pub-pdf"><a href="https://www.nature.com/articles/s41746-021-00461-6" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></span></div>
+                <div class="pub-abstract">Proposes an anomaly-detection network trained on synthetic CT slices to identify and classify COVID‑19 from other pneumonia types, tailored for limited data scenarios. <span class="pub-pdf"><a href="https://www.nature.com/articles/s41746-021-00399-3" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></span></div>
                 <div class="pub-annotation" style="opacity:1;position:static;margin-top:0.7em;">A must-read for open-source AI in healthcare and pandemic response.</div>
             </div>
             <div class="publication-card" data-tags="#Time-series #IoT #BatteryAnalytics">
                 <div class="pub-journal">Sensors, 2020</div>
                 <div class="pub-title">Understanding Smartwatch Battery Utilization in the Wild</div>
                 <div class="pub-tags">#Time‑series #IoT #BatteryAnalytics</div>
-                <div class="pub-abstract">Analyzes real-world battery usage patterns from 832 users, using clustering and a transparent convolutional neural network to distinguish high vs. low consumption events. <span class="pub-pdf"><a href="https://www.mdpi.com/1424-8220/20/9/2591" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></span></div>
+                <div class="pub-abstract">Analyzes real-world battery usage patterns from 832 users, using clustering and a transparent convolutional neural network to distinguish high vs. low consumption events. <span class="pub-pdf"><a href="https://www.mdpi.com/1424-8220/20/13/3784" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></span></div>
                 <div class="pub-annotation" style="opacity:1;position:static;margin-top:0.7em;">For those interested in wearable analytics and real-world data.</div>
             </div>
             <div class="publication-card" data-tags="#FederatedLearning #Compression #CommunicationEfficiency">
                 <div class="pub-journal">arXiv preprint, 2021</div>
                 <div class="pub-title">FEDZIP: A Compression Framework for Communication‑Efficient Federated Learning</div>
                 <div class="pub-tags">#FederatedLearning #Compression #CommunicationEfficiency</div>
-                <div class="pub-abstract">Introduces FedZip, a federated-learning compression method using Top-z sparsification, clustering-based quantization, and encoding to reduce communication by up to 1000× while preserving accuracy. <span class="pub-pdf"><a href="https://arxiv.org/abs/2102.08599" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></span></div>
+                <div class="pub-abstract">Introduces FedZip, a federated-learning compression method using Top-z sparsification, clustering-based quantization, and encoding to reduce communication by up to 1000× while preserving accuracy. <span class="pub-pdf"><a href="https://arxiv.org/abs/2102.01593" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></span></div>
                 <div class="pub-annotation" style="opacity:1;position:static;margin-top:0.7em;">Read this if you care about scalable, efficient AI.</div>
             </div>
             <div class="publication-card" data-tags="#Pruning #ModelCompression #MedicalImaging">
                 <div class="pub-journal">arXiv / CoRR, 2023</div>
                 <div class="pub-title">Beta‑Rank: A Robust Convolutional Filter Pruning Method For Imbalanced Medical Image Analysis</div>
                 <div class="pub-tags">#Pruning #ModelCompression #MedicalImaging</div>
-                <div class="pub-abstract">Presents “Beta‑Rank,” a pruning technique designed to improve convolutional neural networks’ performance on imbalanced medical imaging datasets. <span class="pub-pdf"><a href="https://arxiv.org/abs/2301.07013" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></span></div>
+                <div class="pub-abstract">Presents “Beta‑Rank,” a pruning technique designed to improve convolutional neural networks’ performance on imbalanced medical imaging datasets. <span class="pub-pdf"><a href="https://arxiv.org/abs/2304.07461" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a></span></div>
                 <div class="pub-annotation" style="opacity:1;position:static;margin-top:0.7em;">Curious about model compression for real-world medical data? Start here.</div>
             </div>
             <div class="publication-card" data-tags="#AffectiveComputing #Competition #PhysiologicalSignals">
@@ -525,7 +525,10 @@
         }
     ];
     function openProjectModal(idx) {
-        document.getElementById('project-modal-content').innerHTML = `<span class='close-modal' onclick='closeProjectModal()'>&times;</span>` + projectData[idx].content;
+        // Only inject the project content, not the close button
+        document.getElementById('project-modal-content').innerHTML =
+            "<span class='close-modal' onclick='closeProjectModal()'>&times;</span>" +
+            projectData[idx].content;
         document.getElementById('project-modal').style.display = 'flex';
     }
     function closeProjectModal() {
